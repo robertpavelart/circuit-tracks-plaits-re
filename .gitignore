@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+.venv/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Proprietary / local inputs
+original/
+firmware/
+documentation/
+*.syx
+*.bin
+*.hex
+*.dfu
+*.dump
+*.rom
+*.ncs
+*.wav
+
+# Build / analysis output
+builds/
+out/
+dist/
+tmp/
+*.log
+ghidra/
+*.gpr
