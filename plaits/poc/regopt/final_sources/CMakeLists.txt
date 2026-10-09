@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.15)
+project(variablesaw_standalone LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+if(MSVC)
+ # Match sealed19A MDd/iterator ABI without rebuilding it; optimize our wrappers.
+ set(CMAKE_CXX_FLAGS_DEBUG "/MDd /Zi /O2 /Ob2")
+endif()
+get_filename_component(ROOT "${CMAKE_CURRENT_LIST_DIR}/../../../.." ABSOLUTE)
+add_executable(vs_reference ../../reference.cpp)
+target_include_directories(vs_reference PRIVATE "${ROOT}/plaits/upstream")
+if(MSVC)
+ target_compile_options(vs_reference PRIVATE /fp:strict /O2)
+endif()
+add_executable(vs_dsp ../runner_final.cpp)
+target_include_directories(vs_dsp PRIVATE "${ROOT}/emulator/upstream/dsp56300/source" "${ROOT}/emulator/upstream/asmjit/src")
+target_compile_definitions(vs_dsp PRIVATE DSP56K_FORCE_INTERPRETER=1 DSP56300_DEBUGGER=0)
+target_link_libraries(vs_dsp PRIVATE "${ROOT}/builds/phase19a/core-build/replay_core.lib" "${ROOT}/builds/phase19a/core-build/upstream/asmjit/asmjit.lib" bcrypt)
+
+
+add_executable(vs_golden ../golden_runner.cpp)
+target_include_directories(vs_golden PRIVATE "${ROOT}/emulator/upstream/dsp56300/source" "${ROOT}/emulator/upstream/asmjit/src")
+target_compile_definitions(vs_golden PRIVATE DSP56K_FORCE_INTERPRETER=1 DSP56300_DEBUGGER=0)
+target_link_libraries(vs_golden PRIVATE "${ROOT}/builds/phase19a/core-build/replay_core.lib" "${ROOT}/builds/phase19a/core-build/upstream/asmjit/asmjit.lib" bcrypt)

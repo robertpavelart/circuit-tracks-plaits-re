@@ -27,3 +27,14 @@ tmp/
 *.log
 ghidra/
 *.gpr
+
+# Reproducible upstream dependencies: fetch locally, do not vendor into this repo
+emulator/upstream/asmjit/
+emulator/upstream/dsp56300/
+plaits/upstream/plaits/
+plaits/upstream/stmlib/
+
+# Local scratch/import helpers
+source-batch-*.json
+source-pack-*.json
+github-source-import.jsonl

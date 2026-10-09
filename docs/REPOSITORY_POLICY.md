@@ -25,4 +25,4 @@ The local working tree is:
 
 `C:\Proj SSD\CODEX\CIRCUIT`
 
-Do not bulk-push it. Review redistributable paths first.
+Do not bulk-push the original local working tree. This packaged snapshot contains the reviewed subset intended for the repository.

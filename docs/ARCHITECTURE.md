@@ -49,14 +49,14 @@ Final knob routing is deferred.
 
 ## Long-term concept
 
-1. MODEL
-2. HARMONICS
-3. TIMBRE
-4. MORPH
-5. stock cutoff
-6. stock resonance
-7. attack
-8. sustain/release
+1 MODEL  
+2 HARMONICS  
+3 TIMBRE  
+4 MORPH  
+5 stock cutoff  
+6 stock resonance  
+7 attack  
+8 sustain/release  
 
 Conceptual voice target only:
 - Synth1: 1

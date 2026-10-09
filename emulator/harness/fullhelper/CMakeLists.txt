@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.15)
+project(ct_fullhelper LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(ROOT "${CMAKE_CURRENT_LIST_DIR}/../../..")
+add_executable(ct_fullhelper replay.cpp)
+target_include_directories(ct_fullhelper PRIVATE "${ROOT}/emulator/upstream/dsp56300/source" "${ROOT}/emulator/upstream/asmjit/src")
+target_compile_definitions(ct_fullhelper PRIVATE DSP56K_FORCE_INTERPRETER=1 DSP56300_DEBUGGER=0)
+target_link_libraries(ct_fullhelper PRIVATE "${ROOT}/builds/phase19a/core-build/replay_core.lib" "${ROOT}/builds/phase19a/core-build/upstream/asmjit/asmjit.lib" bcrypt)

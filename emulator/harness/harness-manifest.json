@@ -1,0 +1,7 @@
+{
+  "emulator/CMakeLists.txt": "5e70ae2c49bab24a4ba44765e85ccf79b6341a4a74e75a09647ffddf920664e7",
+  "emulator/build.ps1": "8c686ca73991fb537348f86e7bae4b6ac9f278f52177eb401b30284181b03570",
+  "emulator/harness/main.cpp": "194a652b8c39580657a689baa3d0038f3945c3f2db4bfdc53c38d34a71b34201",
+  "emulator/tests/fixtures.json": "e90189d14f4eba62b2dda130760ea36fc77c31f08577e3fa44539bb2a744be92",
+  "emulator/tests/run.py": "1c597cef90ba8ada9b65a8d540df560eb7ec14217e076a72f47876c063ebda22"
+}

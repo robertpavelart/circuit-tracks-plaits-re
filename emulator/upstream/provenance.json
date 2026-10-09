@@ -1,0 +1,102 @@
+{
+  "core_revision": "44353be2f0156cac970c6ab4f467ea1998b40605",
+  "asmjit_revision": "3577608cab0bc509f856ebf6e41b2f9d9f71acc4",
+  "patches": [
+    {
+      "file": "source/dsp56kEmu/memory.h",
+      "before": "89730b4dc6ef98c2252b8e27bf5c352e3879f5269480cb40fa64c734ff8b0671",
+      "after": "df8e77b0260b802a0838127291fb96022d8beae4b978f3af4d2277a26000cf84",
+      "needle": "#include <map>"
+    },
+    {
+      "file": "source/dsp56kEmu/memory.h",
+      "before": "89730b4dc6ef98c2252b8e27bf5c352e3879f5269480cb40fa64c734ff8b0671",
+      "after": "3e22d5a1090e67763feb84a68bc68d0da01831ec3d31f065b8b08d1eef6d0c03",
+      "needle": "explicit Memory(const IMemoryValidator&"
+    },
+    {
+      "file": "source/dsp56kEmu/memory.cpp",
+      "before": "7191f83344740cedee0f760518424d21b70fd178254354ad1be08152985a8402",
+      "after": "efdf058be0c510bb0f76c5fc224aa4023de50573815e6c608f75d2c29ad538ef",
+      "needle": "bool Memory::dspWrite( EMemArea& _area, TWord& _offset, TWord _value )\n\t{"
+    },
+    {
+      "file": "source/dsp56kEmu/memory.cpp",
+      "before": "7191f83344740cedee0f760518424d21b70fd178254354ad1be08152985a8402",
+      "after": "d8ce93a2ddf1948463cbebeff7433f6b6a33f5e283da50b4de803d555411f9b8",
+      "needle": "TWord Memory::get( EMemArea _area, TWord _offset ) const\n\t{"
+    },
+    {
+      "file": "source/dsp56kEmu/memory.cpp",
+      "before": "7191f83344740cedee0f760518424d21b70fd178254354ad1be08152985a8402",
+      "after": "ccfe7ac9d7eca30c6812897e348c70637b29b29cbe0338703e5bd33e5e86462b",
+      "needle": "void Memory::getOpcode(TWord _offset, TWord& _wordA, TWord& _wordB) const\n\t{"
+    },
+    {
+      "file": "source/dsp56kEmu/dsp.h",
+      "before": "d1e58225b68a0d5333d645d19bfb0a63e117b16a0e99b8e407b2277fc7bc1006",
+      "after": "3d9a08b8ee9dc9d61bd020503493940ff200c717ae3b81ad2cb1d7f3e85b22d5",
+      "needle": "void \texecOp"
+    },
+    {
+      "file": "source/dsp56kEmu/dsp.cpp",
+      "before": "629b206bd6c621945bf4b6583692caacdf380ba8e22426141bbe3c15f14dd1d5",
+      "after": "960be9573c84d7f8f061b36dc1aa29044cc3e16305258881da26e06b6211add5",
+      "needle": "void DSP::execOp(const TWord op)\n\t{"
+    },
+    {
+      "file": "source/dsp56kEmu/dsp.cpp",
+      "before": "629b206bd6c621945bf4b6583692caacdf380ba8e22426141bbe3c15f14dd1d5",
+      "after": "08a5a765776f70b26ccf116ecf289666f07e8507d6d48616827da3d690724131",
+      "needle": "(this->*func)(op);\n\t\t\t++m_instructions;"
+    },
+    {
+      "file": "source/dsp56kEmu/dsp.cpp",
+      "before": "629b206bd6c621945bf4b6583692caacdf380ba8e22426141bbe3c15f14dd1d5",
+      "after": "2114240cf4e41c2ba285a6c82fe7ff20851e392d68c666fee03f2613d472d3b9",
+      "needle": "assert(false && \"Peripherals configuration is not supported\");"
+    },
+    {
+      "file": "source/dsp56kEmu/dma.cpp",
+      "before": "f7d5e2aec07f938b0a345fb0e9a72aacbcae66dbd4275663e53e02e2b618b851",
+      "after": "c40867d800e9da2917ee29e2557086f67b72d91a07556c6e18d3406f9488deb1",
+      "needle": "const auto* src = getMemPtr(_srcArea, _srcAddr);\n\t\t\t\tauto* dst = getMemPtr(_dstArea, _dstAddr);\n\n\t\t\t\tmemcpy(dst, src, si"
+    },
+    {
+      "file": "source/dsp56kEmu/dma.cpp",
+      "before": "f7d5e2aec07f938b0a345fb0e9a72aacbcae66dbd4275663e53e02e2b618b851",
+      "after": "92f063ffdd94a888c4eb3522bfaa8563c504443c6ca19dcd0099b5e536d10150",
+      "needle": "auto* dst = getMemPtr(_dstArea, _dstAddr);\n\n\t\t\t\tfor (TWord i = 0; i < _count; ++i)\n\t\t\t\t\t*dst++ = data;"
+    },
+    {
+      "file": "source/dsp56kEmu/dma.h",
+      "before": "8e2ab9f7218599c38b9b94350e337c091fae59be36dd6f6f37a4ecf63437eedf",
+      "after": "ac96c3dfe3105276d6df03b5616ab828541ee4c880137626573dfae625cf7417",
+      "needle": "DmaChannel(Dma& _dma"
+    },
+    {
+      "file": "source/dsp56kEmu/dma.h",
+      "before": "8e2ab9f7218599c38b9b94350e337c091fae59be36dd6f6f37a4ecf63437eedf",
+      "after": "726f6dd75584422c40f5a2c0c6f0519e850e7949593dffe3332aa2688b0aaa89",
+      "needle": "void setActiveChannel(TWord _channel);"
+    },
+    {
+      "file": "source/dsp56kEmu/peripherals.h",
+      "before": "26437a27d81e6dd2053f012bd44ff6372be87ddd3b084393a3ffe6a2f7732d64",
+      "after": "e330276f6df9100323fdce59ee4bbcce4a595173878a29ab3135d9210964981f",
+      "needle": "SHI& getSHI()"
+    },
+    {
+      "file": "source/dsp56kEmu/peripherals.cpp",
+      "before": "096a8b9f14f38b0e8895806c40360063ff885a3fd72fa1bc83c86eb82ab3faed",
+      "after": "fa2ebb5fbdcf5d9aecd3aba3a374e20a8321e1c7f855391340cc3f057ff27c85",
+      "needle": "TWord Peripherals56362::read(const TWord _addr, const Instruction _inst)\n\t{"
+    },
+    {
+      "file": "source/dsp56kEmu/peripherals.cpp",
+      "before": "096a8b9f14f38b0e8895806c40360063ff885a3fd72fa1bc83c86eb82ab3faed",
+      "after": "c232f69e025923c41800a9a0454ae74545491a1bfa29c2307a612b398bc97486",
+      "needle": "void Peripherals56362::write(const TWord _addr, const TWord _val)\n\t{"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "repo_name": "circuit-tracks-plaits-re",
+  "snapshot_date": "2026-10-09",
+  "current_stage": "Phase 20C3 — P-backed persistent-state qualification",
+  "flash_ready": false,
+  "actual_local_source_included": true,
+  "hardware_policy": "No opening/probing; external interfaces only",
+  "source_roots": [
+    "tools",
+    "emulator",
+    "plaits",
+    "notes"
+  ],
+  "upstream_source_vendored": false,
+  "proprietary_firmware_included": false
+}

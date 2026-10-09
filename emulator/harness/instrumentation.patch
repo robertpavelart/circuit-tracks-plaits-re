@@ -1,0 +1,207 @@
+--- a/source/dsp56kEmu/dma.cpp
++++ b/source/dsp56kEmu/dma.cpp
+@@ -431,10 +431,8 @@
+ 			}
+ 			else
+ 			{
+-				const auto* src = getMemPtr(_srcArea, _srcAddr);
+-				auto* dst = getMemPtr(_dstArea, _dstAddr);
+-
+-				memcpy(dst, src, sizeof(TWord) * _count);
++				// REPLAY: one authoritative destination transaction per word, including equal values.
++                copyIndividual();
+ 			}
+ 		}
+ 	}
+@@ -473,10 +471,8 @@
+ 			}
+ 			else
+ 			{
+-				auto* dst = getMemPtr(_dstArea, _dstAddr);
+-
+ 				for (TWord i = 0; i < _count; ++i)
+-					*dst++ = data;
++                    memWrite(_dstArea, _dstAddr+i, data);
+ 			}
+ 		}
+ 	}
+--- a/source/dsp56kEmu/dma.h
++++ b/source/dsp56kEmu/dma.h
+@@ -107,7 +107,10 @@
+ 			WordTriggerRequest,				// Mode = Word, Trigger = Request, Clear DE = no
+ 		};
+ 
+-		DmaChannel(Dma& _dma, IPeripherals& _peripherals, TWord _index);
++		void replayCopy(EMemArea d,TWord da,EMemArea s,TWord sa,TWord n) const { memCopy(d,da,s,sa,n); }
++        void replayFill(EMemArea d,TWord da,EMemArea s,TWord sa,TWord n) const { memFill(d,da,s,sa,n); }
++        void replayFixed(EMemArea d,TWord da,EMemArea s,TWord sa,TWord n) const { memCopyToFixedDest(d,da,s,sa,n); }
++        DmaChannel(Dma& _dma, IPeripherals& _peripherals, TWord _index);
+ 
+ 		void setDSR(TWord _address);
+ 		void setDDR(TWord _address);
+@@ -228,6 +231,7 @@
+ 
+ 		uint32_t exec() noexcept;
+ 		void setActiveChannel(TWord _channel);
++        DmaChannel& replayChannel(TWord i) { return m_channels.at(i); }
+ 		void clearActiveChannel();
+ 
+ 
+--- a/source/dsp56kEmu/dsp.cpp
++++ b/source/dsp56kEmu/dsp.cpp
+@@ -71,7 +71,7 @@
+ 		if(const auto func = findExecPeripheralsFuncT<Peripherals56362, Peripherals56367>(_pX, _pY))	return func;
+ 		if(const auto func = findExecPeripheralsFuncT<Peripherals56303, PeripheralsNop>(_pX, _pY))		return func;
+ 		if(const auto func = findExecPeripheralsFuncT<PeripheralsNop, PeripheralsNop>(_pX, _pY))		return func;
+-		assert(false && "Peripherals configuration is not supported");
++		return &dspExecNop; // replay driver explicitly ticks/injects its declared events
+ 		return nullptr;
+ 	}
+ 
+@@ -323,7 +323,8 @@
+ 	}
+ 
+ 	void DSP::execOp(const TWord op)
+-	{
++    {
++        if(replayBefore) replayBefore(pcCurrentInstruction,op);
+ 		getASM(op, m_opWordB);
+ 
+ 		m_currentOpLen = 1;
+@@ -617,8 +618,9 @@
+ 		while( reg.lc.var > 0 )
+ 		{
+ 			--reg.lc.var;
+-			(this->*func)(op);
+-			++m_instructions;
++			if(replayBefore) replayBefore(repeatedOpPC,op);
++            (this->*func)(op);
++            ++m_instructions;
+ 			if constexpr(!g_useJIT)
+ 				m_cycles += getOpcodeCycles(repeatedOpPC);
+ //			traceOp();
+--- a/source/dsp56kEmu/dsp.h
++++ b/source/dsp56kEmu/dsp.h
+@@ -183,6 +183,7 @@
+ 		TWord	getCurrentInstructionPC			() const									{ return pcCurrentInstruction; }
+ 		TWord	getCurrentInstructionSR			() const									{ return m_srCurrentInstruction; }
+ 
++		void setReplayBefore(std::function<void(TWord,TWord)> f) { replayBefore=std::move(f); }
+ 		ASMJIT_FORCE_INLINE void exec() noexcept
+ 		{
+ 			if(g_useJIT)
+@@ -428,7 +429,8 @@
+ 			return ret;
+ 		}
+ 
+-		void 	execOp							(TWord op);
++		std::function<void(TWord,TWord)> replayBefore;
++        void 	execOp							(TWord op);
+ 
+ 		void	exec_jump						(const TInstructionFunc& _func, TWord _op);
+ 		
+--- a/source/dsp56kEmu/dsp_ops_move.inl
++++ b/source/dsp56kEmu/dsp_ops_move.inl
+@@ -11,13 +11,13 @@
+ 
+ 		if constexpr (write)
+ 		{
+-			const auto m = readMem<Inst, MMM>(op, Area);
++			const auto m = readMem<Inst, MMM, nullptr>(op, Area);
+ 			decode_ddddd_write<TReg24>( ddddd, TReg24(m));
+ 		}
+ 		else
+ 		{
+ 			const auto r = decode_ddddd_read<TWord>( ddddd );
+-			writeMem<Inst, MMM>(op, Area, r);
++			writeMem<Inst, MMM, nullptr>(op, Area, r);
+ 		}
+ 	}
+ 	template<Instruction Inst, EMemArea Area, TWord write> void DSP::move_ddddd_absAddr(TWord _op)
+--- a/source/dsp56kEmu/memory.cpp
++++ b/source/dsp56kEmu/memory.cpp
+@@ -108,7 +108,8 @@
+ 	// set
+ 	//
+ 	bool Memory::dspWrite( EMemArea& _area, TWord& _offset, TWord _value )
+-	{
++    {
++        if(replayWrite) { replayWrite(_area,_offset,_value); return true; }
+ #if MEMORY_HEAT_MAP
+ 		++m_heatMap[_area][_offset];
+ #endif
+@@ -160,7 +161,8 @@
+ 	// get
+ 	//
+ 	TWord Memory::get( EMemArea _area, TWord _offset ) const
+-	{
++    {
++        if(replayRead) return replayRead(_area,_offset);
+ #if MEMORY_HEAT_MAP
+ 		++m_heatMap[_area][_offset];
+ #endif
+@@ -194,7 +196,8 @@
+ 	}
+ 
+ 	void Memory::getOpcode(TWord _offset, TWord& _wordA, TWord& _wordB) const
+-	{
++    {
++        if(replayRead) { _wordA=replayRead(MemArea_P,_offset); _wordB=replayRead(MemArea_P,_offset+1); return; }
+ #if MEMORY_HEAT_MAP
+ 		++m_heatMap[MemArea_P][_offset];
+ #endif
+--- a/source/dsp56kEmu/memory.h
++++ b/source/dsp56kEmu/memory.h
+@@ -1,6 +1,7 @@
+ #pragma once
+ 
+ #include <map>
++#include <functional>
+ #include <set>
+ #include <vector>
+ 
+@@ -89,7 +90,9 @@
+ 		// implementation
+ 		//
+ 	public:
+-		explicit Memory(const IMemoryValidator& _memoryMap, TWord _memSize = 0xc00000, TWord* _externalBuffer = nullptr);
++		std::function<TWord(EMemArea,TWord)> replayRead;
++        std::function<void(EMemArea,TWord,TWord)> replayWrite;
++        explicit Memory(const IMemoryValidator& _memoryMap, TWord _memSize = 0xc00000, TWord* _externalBuffer = nullptr);
+ 		explicit Memory(const IMemoryValidator& _memoryMap, TWord _memSizeP, TWord _memSizeXY, TWord _brigedMemoryAddress, TWord* _externalBuffer = nullptr, std::vector<MemoryMirror> _mirrors = {});
+ 		Memory(const Memory&) = delete;
+ 		Memory& operator = (const Memory&) = delete;
+--- a/source/dsp56kEmu/peripherals.cpp
++++ b/source/dsp56kEmu/peripherals.cpp
+@@ -407,7 +407,8 @@
+ 	}
+ 
+ 	TWord Peripherals56362::read(const TWord _addr, const Instruction _inst)
+-	{
++    {
++        if(replayPeripheral) replayPeripheral(_addr,false,0);
+ 		switch (_addr)
+ 		{
+ 		case HDI08::HSR:	return m_hdi08.readStatusRegister();
+@@ -590,7 +591,8 @@
+ 	}
+ 
+ 	void Peripherals56362::write(const TWord _addr, const TWord _val)
+-	{
++    {
++        if(replayPeripheral) replayPeripheral(_addr,true,_val);
+ 		switch (_addr)
+ 		{
+ 		case HDI08::HSR:	m_hdi08.writeStatusRegister(_val);		return;
+--- a/source/dsp56kEmu/peripherals.h
++++ b/source/dsp56kEmu/peripherals.h
+@@ -225,7 +225,8 @@
+ 		EsaiClock& getEsaiClock()		{ return m_esaiClock; }
+ 		Esai& getEsai()					{ return m_esai; }
+ 		HDI08& getHDI08()				{ return m_hdi08; }
+-		SHI& getSHI()					{ return m_shi; }
++		std::function<void(TWord,bool,TWord)> replayPeripheral;
++        SHI& getSHI()					{ return m_shi; }
+ 		DAX& getDAX()					{ return m_dax; }
+ 		Dma& getDMA()					{ return m_dma; }
+ 		EsaiPortC& getPortC()			{ return m_portC; }

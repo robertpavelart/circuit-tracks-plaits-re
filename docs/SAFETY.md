@@ -19,5 +19,4 @@ No modified firmware should be sent to hardware until:
 ## Evidence labels
 
 Use consistently:
-
 VERIFIED / TESTED / MEASURED / CALCULATED / BOUNDED-PROOF / CONDITIONAL / HYPOTHESIS / UNRESOLVED

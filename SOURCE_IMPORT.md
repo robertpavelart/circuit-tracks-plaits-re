@@ -1,16 +1,21 @@
-# Source import
+# Source snapshot
 
-The actual project source currently lives locally at:
+This repository now contains the reviewed project-authored source snapshot supplied on 2026-10-09.
+
+Included:
+
+- `tools/` — reverse-engineering and validation utilities
+- `emulator/` — harnesses, stock replay work, and tests
+- `plaits/poc/` — VariableSaw / Plaits-derived proof-of-concept work
+- `plaits/seam/` — stock seam adapters and validation
+- `notes/` — research log and phase notes
+
+Upstream dependency source trees are intentionally **not vendored**. Only provenance/manifests are kept under the corresponding `upstream/` directories.
+
+Proprietary Novation firmware, extracted DSP payloads, build outputs, device dumps, vendor PDFs, samples, and local caches are intentionally excluded.
+
+Original local working tree used during research:
 
 `C:\Proj SSD\CODEX\CIRCUIT`
 
-It is not yet in this GitHub repository.
-
-Suggested review targets before publishing source:
-- `plaits/`
-- project-authored `emulator/` changes/tests
-- `tools/`
-- selected `notes/`
-- reproducibility scripts
-
-Do not reconstruct or fabricate missing source from reports. Import the real files after reviewing licenses and provenance.
+This file records source-import status only; it is not a claim that every historical research branch is still active. Current project direction is documented in `docs/STATUS.md`, `docs/ROADMAP.md`, and `docs/SAFETY.md`.
