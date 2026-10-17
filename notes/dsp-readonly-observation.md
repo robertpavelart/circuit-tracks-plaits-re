@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 16 — strict read-only, nonhalting observation assessment
 
 ## Phase 17 — documented OnCE fails the observation gate
@@ -20,8 +22,8 @@ cannot close internal-write exclusions. Keephardware disconnected and5E rejected
 X35F invariant/normalhigh-X availability stay **NOT-YET-DETERMINED**; service
 robustness stays **NO**. No allocation or Plaits work.
 
-See [dsp-debug-observation.md](dsp-debug-observation.md),
-[board-debug-access.md](board-debug-access.md) and `builds/phase17/final/` for
+See [dsp-debug-observation.md](<dsp-debug-observation.md>),
+[board-debug-access.md](<board-debug-access.md>) and `builds/phase17/final/` for
 citations/matrices/source witnesses. **Next:** static emulator coverage/readiness
 specification for minimal1F97/203A replay; no broad alias census or live debug.
 This supersedes historical next-step suggestions below without changing their

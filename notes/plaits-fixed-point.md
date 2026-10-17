@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 20A — VariableSaw fixed-point contract
 
 ## Phase 20A-DIV update — exact contract retained (2026-10-06)
@@ -9,7 +11,7 @@ positive signed24 inputs, d>0, n<4d. Explicit d=0 guard returns0 outside the
 valid ratio API. No rounding or oracle changes.37,016 isolated fixtures and
 all43 unchanged oscillator cases pass; old/new samples and block states identical.
 Full semantics, manual inconsistencies, recurrence proof and evidence:
-[plaits-native-div.md](plaits-native-div.md). Restoring code below remains the
+[plaits-native-div.md](<plaits-native-div.md>). Restoring code below remains the
 immutable baseline; its earlier future-DIV remarks are historical.
 
 2026-10-06. **IMPLEMENTED / TESTED:** standalone DSP56300 assembler program and

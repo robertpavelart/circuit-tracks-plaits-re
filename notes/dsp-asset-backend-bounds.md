@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19C-BACKENDBOUND — backend validation and normal asset limits
 
 ## Phase 19C-PACKLINK — current scoped native correspondence
@@ -25,7 +27,7 @@ tolerance), not a universal firmware/backend policy. X11 STATE-DEPENDENT and
 other host/async obligations remain open; no parent replay/target recomputation.
 The asset branch stops pending new existing offline native/selection evidence.
 Next independent blocker:P:0x204B; not analyzed here. Details/reproduction:
-[PACKLINK](dsp-pack-native-link.md), builds/phase19c-packlink/final-v2/.
+[PACKLINK](<dsp-pack-native-link.md>), builds/phase19c-packlink/final-v2/.
 
 The older stopping condition/next step below is historical and superseded to
 this extent; its backend instruction findings and immutable evidence remain.
@@ -44,7 +46,7 @@ preservation; sample_i.wav does not pass native decimal-prefix parser. X11 remai
 STATE-DEPENDENT. Actual selected/native and all-normal asset mutation gates remain
 open; no parent replay/bridge promotion. Blanket missing-source-data stop below is
 historical; new missing evidence is selection/native correspondence, not raw WAVs.
-See[dsp-asset-offline-data.md](dsp-asset-offline-data.md), canonical
+See[dsp-asset-offline-data.md](<dsp-asset-offline-data.md>), canonical
 builds/phase19c-assetdata/final/:25 repeat-identical files,733 independent header
 checks/768 arithmetic rows/24576 interval checks,1273 source hash/size/mtime guards,
 firmware/extract/core checksPASS,0 CPU instructions.

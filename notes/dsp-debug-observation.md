@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 17 — DSP debug and offline observation assessment
 
 ## Phase 18 — minimal offline replay specified, not implemented
@@ -15,9 +17,9 @@ material worker behavior and actual normal reachability of parent1E15→1F5C.
 Do not invent a full startup checkpoint or a mandatory1F97 scheduler stage.
 Separate conditional unit fixtures from integrated normal stock scenarios.
 
-See [dsp-emulator-spec.md](dsp-emulator-spec.md),
-[dsp-replay-scenarios.md](dsp-replay-scenarios.md),
-[dsp-emulator-validation.md](dsp-emulator-validation.md), and builds/phase18/final/.
+See [dsp-emulator-spec.md](<dsp-emulator-spec.md>),
+[dsp-replay-scenarios.md](<dsp-replay-scenarios.md>),
+[dsp-emulator-validation.md](<dsp-emulator-validation.md>), and builds/phase18/final/.
 **Next:** Phase19A core/memory/every-write tracing plus ISA/AGU/loop/IRQ coverage
 tests only after explicit implementation instruction. Planned19B startup,
 19C targeted scheduler/models,20 validated stock replay; gates may add work.
@@ -121,7 +123,7 @@ gate, rather than claiming a fresh complete family-manual review.
 
 ## E–F. Board access and passive electrical observations
 
-See [board-debug-access.md](board-debug-access.md). Public research reports a
+See [board-debug-access.md](<board-debug-access.md>). Public research reports a
 TC2050-compatible debug header and references J3 photograph/diagram files.
 Exact numbered pins and DSP TAP pads are **UNRESOLVED**. STM32 debug access
 would not expose DSP private RAM without interacting with the DSP.

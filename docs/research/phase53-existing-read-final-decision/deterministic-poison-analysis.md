@@ -1,0 +1,15 @@
+> Saved phase-scoped evidence; original next-step instructions are historical. [Current project state](../../CURRENT_STATUS.md).
+
+# Phase53 — deterministic poison decision
+
+**PROVEN:** a full internal zero overwrite exists: READ callback57EA2→1A7E4. It is already the known initial state before every target read. No existing normal read-only non-NOR command establishes a second full512-byte pattern; non-NOR SCSI generators touch at most36 bytes. Any short-header changes made before TARGET are overwritten by TARGET's own4096-byte zero clear. This means A supplies only the already-tested single zero pattern, not a new authentication primitive. [buffer-producers.md](<buffer-producers.md>); producer-cases.json (local-only reference: `builds/phase53-existing-read-final-decision/producer-cases.json`; not distributed).
+
+**PROVEN collision limit:** if poison P[i] equals real target T[i] in an unread position, returned bytes alone cannot prove that position was refreshed. The previous zero-tailedBPB counterexample yields exactly identical4096 bytes after512-byte refresh versus4096-byte refresh. Its512 metadata bytes really were refreshed; it does not prove an incorrect BPB. The general missing property is current-read byte provenance, not ordinary BPB plausibility. [partial-dma-exhaustive.md](<../phase52-read-authentication/partial-dma-exhaustive.md>); authentication-experiment.json (local-only reference: `builds/phase52-read-authentication/authentication-experiment.json`; not distributed).
+
+Two-pattern mathematical condition: suppose two known full512-byte patternsP andQ differ at every position, remain intact until current-target writes, and any refreshed byte equals the correctly addressed currentT[i]. Equal final vectors then imply each position was refreshed in at least one run: both unrefreshed would leave unequalP[i]/Q[i]. For forward-prefix writes this also implies at least one run refreshed all512 bytes. This can establish the combined metadata value under those assumptions; it does not require each run individually complete.
+
+**PROVEN not implementable by inspected B1.3 interfaces:** no operation chooses two such full patterns, and57EA2 collapses both hypothetical pre-target patterns to the identical zero vector anyway. Short INQUIRY/MODE SENSE/other headers cannot survive this clear or cover the full512-byte requirement. No command skips the target clear in a normal accepted READ10. A software-only host validation change cannot manufacture that missing primitive.
+
+**PROVEN NO for the proposed existing-interface poison mechanism:** neither a guaranteed-different target pattern nor a surviving pair of deterministic full-buffer poisons is available. No513-length rerun was performed because no new qualified poison producer was found and the user prohibited repeating Phase52. The saved513-case evidence is reused unchanged. validation.json (local-only reference: `builds/phase52-read-authentication/validation.json`; not distributed).
+
+No full-buffer fill via WRITE10, arbitrary RAM poke, malformed command, firmware modification or diagnostic installation is used as a substitute for a read-only primitive.

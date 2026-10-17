@@ -1,0 +1,31 @@
+UPLOADER FREEZE - LIVE LOCKED
+A candidate install: ct_uploader-final-offline-locked.html
+B B1.3 restore: SAME exact file
+C official4486 restore: SAME exact file
+SHA256 (all three roles): bf1ef00dbca9c3715932235249fcc8ba0a71d6f2f989c047aa8caf66b85e17a5
+Version: no upstream semantic version; exact Phase63 locked review copy, unchanged.
+Source: builds/phase63-defect-closure/ct_uploader-phase63-offline-locked.html
+PREFLIGHT_QUALIFIED=false; requestMIDIAccess/identify/send handlers refuse.
+Historical upstream reference hash:
+c5d6bb67cd92720eac89d609ebaafc803902d28356840ae61691dd5987b43a6f
+
+File checks: exact three-file SHA allowlist; Novation F0 00 20 29 00; INIT product
+01 64; 71 INIT /7C HEADER /72 WRITE* /73 FINISH; decoded size<=70000; MPEG2 CRC.
+Device check: manual port selection; UI recommends Circuit Tracks names. Identity
+parser checks Novation manufacturer bytes and decodes app/bootloader mode/build.
+This is not a strict runtime model/serial authentication gate for send. The product
+01 64 check is on the selected firmware FILE, not a proved identity of the device.
+No live identity or handshake occurred here. Do not overstate this distinction.
+
+Silent no-op: identical compared version/header can be a no-op in general. Offline
+B1.3->candidate, candidate->B1.3 and candidate->official4486 exact-image replays each
+show silent_noop=false; N63DEV compared header differs from their intended source.
+Installing the same candidate twice is not the intended test and can no-op.
+
+Success: updater waits for acknowledgements/status; 73 status127 means received,
+then reboot/install is expected. UI success is NOT an installed-BIN readback hash.
+Planned physical acceptance requires normal UI, expected identity/USB behavior and
+subsequent diagnostic semantics. Exact installed bytes are proven only in saved
+offline replays. Real candidate-specific install/rollback remains untested.
+No browser opened; no ports, handshake or transmission. New enabled release needs
+explicit user decision plus separately reviewed file/hash; do not toggle this copy.

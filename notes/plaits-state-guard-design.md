@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase20C5 — state guards and failure containment
 
 2026-10-07. **PARTIAL / design only.** Chosen numeric object P:[3FF0,3FF7);

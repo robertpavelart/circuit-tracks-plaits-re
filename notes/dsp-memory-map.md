@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # DSP boot records and memory reconstruction — build 4486
 
 Phase 4 update: `voice-descriptor-map.md` maps all eight dispatch fields,

@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19C-ASSETBOUND — 64-record asset address bounds
 
 ## Phase 19C-ASSETDATA — concrete archive models
@@ -11,7 +13,7 @@ records resolve; no clips/wraps/requested-cell hits. Combined interval perpack
 for these datasets only, not all normal imports. Native filename parsing rejects
 sample_i.wav; actual native selection/content preservation remainsUNRESOLVED.
 X11STATE-DEPENDENT, no X/Y-write claims, normal host family not closed.
-See[dsp-asset-offline-data.md](dsp-asset-offline-data.md) for exact CSVs/provenance,
+See[dsp-asset-offline-data.md](<dsp-asset-offline-data.md>) for exact CSVs/provenance,
 25 repeat-identical artifacts and protected source/firmware/core checksPASS.
 No hardware/user-file modifications/newCPUexecution/bridge recomputation.
 
@@ -38,7 +40,7 @@ cell contributions remainUNRESOLVED; asset family NOT CLOSED, replayNO.
 
 **STOP:** exact normal source constraints require absent offline selected PCM
 directory/files and selection metadata. See
-[dsp-asset-backend-bounds.md](dsp-asset-backend-bounds.md) for exact data list.
+[dsp-asset-backend-bounds.md](<dsp-asset-backend-bounds.md>) for exact data list.
 12 repeat-identical artifacts,8 tests/overwrite refusal/protection checksPASS,
 0 CPU ops. Canonical builds/phase19c-backendbound/final-v3/. Earlier findings
 below retain their labels and premises; backend provenance above supersedes them.

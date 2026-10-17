@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Seven-word P-state qualification — 2026-10-07
 
 ## Phase20C4 ownership follow-up — 2026-10-07

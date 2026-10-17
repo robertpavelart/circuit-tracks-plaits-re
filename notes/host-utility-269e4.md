@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 11 — addressed host utility and high-X reachability
 
 ## Phase 16 — observation safety gate FAILED
@@ -14,7 +16,7 @@ ARM29344/292F8 address-cache interaction could redirect a subsequent cached
 normal write; actual interleaving remains **UNRESOLVED**, not an observed bug.
 Synchronous SPI/completion polling and DSP ISR preemption preclude a claim of
 glitch-free operation. External physical ingress and global side effects remain
-**UNRESOLVED**. See [dsp-readonly-observation.md](dsp-readonly-observation.md),
+**UNRESOLVED**. See [dsp-readonly-observation.md](<dsp-readonly-observation.md>),
 offline audit `tools/ct_readonly_observation_audit.py`, `builds/phase16/final/`.
 
 X:35F invariant and high-X normal availability remain **NOT-YET-DETERMINED**;

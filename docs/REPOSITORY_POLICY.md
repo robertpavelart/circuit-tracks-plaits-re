@@ -26,3 +26,7 @@ The local working tree is:
 `C:\Proj SSD\CODEX\CIRCUIT`
 
 Do not bulk-push the original local working tree. This packaged snapshot contains the reviewed subset intended for the repository.
+
+## Selective publication boundary
+
+Only individually reviewed project-authored text source may be tracked from historical build directories; their generated outputs remain excluded/ignored. Do not replace this allowlist process with a bulk copy or git add of the original research workspace. Hashes, addresses and narrative findings are metadata, not permission to distribute firmware bytes, disassembly payloads or device snapshots. Required derivative-source license notices must remain. HARDWARE-ATTEMPT.json, credentials, caches and user content must never be staged. See SOURCE_IMPORT.md for the current subset and omitted-input limits.

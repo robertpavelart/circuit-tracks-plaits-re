@@ -1,3 +1,5 @@
+> Historical experiment scope, not the current global project stop point. [Current state](../../docs/CURRENT_STATUS.md).
+
 # Standalone VariableSaw-derived DSP56300 PoC
 
 Phase20A study only. No Circuit image/peripherals, memory reservation or integration.

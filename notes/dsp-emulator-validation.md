@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 18 — validation and stop gates for offline replay
 
 ## Phase 19C-PARENT — static qualification and refusal validation
@@ -13,7 +15,7 @@ checkpoint gate remains CLOSED for missing parent-selecting predecessor and
 actual caller state. Inactive helper snapshots cannot be relabeled normal.
 D99's candidate effect-chain inherits LF1/LA=DAF/LC1..5, requiring separate
 qualification if a genuine parent target is proved. No active-loop test was
-silently substituted. [dsp-parent-replay.md](dsp-parent-replay.md) records
+silently substituted. [dsp-parent-replay.md](<dsp-parent-replay.md>) records
 the stop condition, static evidence and design gates. Authentic boot remains
 unresolved independently; no ROM/scheduler search automatically launched.
 
@@ -26,8 +28,8 @@ independent builds with byte-identical traces. No Circuit image/startup or
 modified firmware execution. Exact source overlays reproduce; vendor/original
 and extraction hashes unchanged. Source/site guard rejects an added store file.
 
-See [dsp-emulator-phase19a.md](dsp-emulator-phase19a.md),
-[dsp-emulator-write-paths.md](dsp-emulator-write-paths.md) and
+See [dsp-emulator-phase19a.md](<dsp-emulator-phase19a.md>),
+[dsp-emulator-write-paths.md](<dsp-emulator-write-paths.md>) and
 builds/phase19a/reproducibility-final.json. Passed gates cover the supported fixture
 configuration, not all chip/ISA/peripheral behavior. JIT remains disabled;
 unknown-state, stock map/OMR/host tables, worker/ICC and timing are unresolved.

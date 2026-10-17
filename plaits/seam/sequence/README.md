@@ -1,3 +1,5 @@
+> Historical experiment scope, not the current global project stop point. [Current state](../../../docs/CURRENT_STATUS.md).
+
 # Phase20B5 — bounded static sequencer provenance
 
 No firmware CPU, Components launch, download, hardware, MIDI/SysEx, patching or

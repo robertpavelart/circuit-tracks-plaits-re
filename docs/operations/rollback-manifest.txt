@@ -1,0 +1,12 @@
+circuittracks-B1.3-manifest-matched.syx
+Bytes: 598489
+SHA256: 6f07376b5983a5e0350d4883ae9ed57a69bc735320afde9f43ca75017b8e8736
+Copied byte-identically from builds/phase63-defect-closure/rollback/circuittracks-B1.3-manifest-matched.syx
+Provenance: Pinned official+COPY/ADD reconstruction, matching public B1.3 manifest.
+
+circuittracks-firmware-4486-STOCK.syx
+Bytes: 432961
+SHA256: bd2d294bafa88fdec7ae1f5fcaaa13158323969c5a40f83405a72e4ad329a0bd
+Copied byte-identically from builds/phase63-defect-closure/rollback/circuittracks-firmware-4486-STOCK.syx
+Provenance: Local Phase43/reference-origin file matching saved official4486 baseline; NOT independently authenticated against a Novation-origin acquisition.
+

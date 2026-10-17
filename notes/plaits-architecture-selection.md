@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase20C6 — architecture selection
 
 2026-10-07. **SELECT-A. CONDITIONAL preference; executable patch readiness remains

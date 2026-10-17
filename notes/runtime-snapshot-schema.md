@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase20B6 — minimal stock post snapshot schema
 
 2026-10-07. **DESIGN ONLY**. No snapshot acquired or importer implemented.

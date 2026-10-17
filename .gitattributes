@@ -1,0 +1,2 @@
+# Preserve published file hashes, including locked tools, on every checkout.
+* -text

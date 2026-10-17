@@ -1,3 +1,5 @@
+> Historical experiment scope, not the current global project stop point. [Current state](../../../docs/CURRENT_STATUS.md).
+
 # Phase20B4 — project0 association and conditional macro equivalence
 
 Offline cached data only. No Components execution, new dependency, firmware CPU,

@@ -1,77 +1,28 @@
-# Circuit Tracks Plaits RE
+# Circuit Tracks / Plaits research
 
-Experimental reverse-engineering and DSP integration research for running a Mutable Instruments Plaits-derived synthesis engine inside a Novation Circuit Tracks.
+## Status — October 2026
 
-> **Current status:** research / offline integration design only. No flash-ready custom firmware has been produced.
+| Question | Current state |
+|---|---|
+| Long-term goal | Four melodic Plaits tracks on Circuit Tracks, retaining useful sequencer, drums, mixer, FX and project workflow where feasible |
+| Current artifact | Temporary NOR diagnostic firmware, **not Plaits** |
+| Candidate hardware-tested | **NO**; only user-reported recovery entry/exit rehearsal |
+| Known offline firmware blockers | None demonstrated |
+| Operational release | **NOT YET ENABLED**; host and uploader LOCKED |
+| Residual software uncertainty | Post-READY indirect allocation reachability with only eight bytes modeled heap gap |
+| Recovery | Bootloader entry/exit physically rehearsed; recovery flashing not tested or guaranteed |
+| Next step | Separately reviewed operational release → controlled hardware test preparation |
 
-## Project goal
+**OPERATIONAL PREFLIGHT = UNQUALIFIED. POST-READY ALLOCATION CENSUS = UNQUALIFIED. USB STORAGE JOINT PATH = PASS.**
 
-Long-term target:
-- Synth 1 / Synth 2 can use a Plaits-derived engine.
-- MIDI 1 / MIDI 2 may eventually host internal polyphonic voices if CPU/memory allow.
-- Retain stock Circuit post-processing where practical.
-- Preserve a safe path back to original firmware.
-- No opening, soldering, probing, or hardware debugger access.
+Current through 17 October 2026 (Europe/Moscow). The Phase63 artifact is a temporary NOR diagnostic, not Plaits firmware; it has not been hardware-tested. Phase67's FINAL PREFLIGHT CLOSURE = PASS remains valid only within its scoped model. No concrete offline firmware blocker has been demonstrated; the accepted residual software uncertainty is post-READY indirect allocation reachability with an eight-byte modeled heap gap. Tools remain locked. Risk acceptance is neither proof nor authorization to use them.
 
-First milestone:
-**one mono VariableSaw/Plaits-derived voice on one selected stock synth path, while the rest of the machine stays stock.**
+The independent Claude review is **reported by the user** as: **REASONABLE TO PROCEED WITH CONTROLLED HARDWARE TEST**, subject to explicitly accepted residual risk. The reported review found no concrete offline firmware blocker or bootloader-loss path and recognized the actual defect fixes. This records the supplied review conclusion, not a new independent review in this task. Later allocation findings remain SOFTWARE UNKNOWN even though earlier review emphasized hardware/model uncertainty. Neither favorable review nor accepted soft-brick risk changes OPERATIONAL PREFLIGHT = UNQUALIFIED or enables tools.
 
-## Current architecture candidate
+Start with [HANDOFF.md](<docs/HANDOFF.md>), [CURRENT_STATUS.md](<docs/CURRENT_STATUS.md>) (exact candidate/tool/rollback identities), [NEXT_STEPS.md](<docs/NEXT_STEPS.md>) and [DOCUMENTATION_INDEX.md](<docs/DOCUMENTATION_INDEX.md>).
 
-```text
-stock request/completion machinery
-        ↓
-stock lookup / coefficient ramps
-        ↓
-stock 32-word combiner
-        ↓
-candidate interception P:0x9B9
-        ↓
-Plaits-derived mono32 replacement
-        ↓
-restore required live state
-        ↓
-original P:0x9D9
-        ↓
-stock post-processing
-```
+**H4 remains FAILED (H4 = FAIL) for bounded in-session recovery.** On any failed or uncertain raw capture: discard all partial evidence; DO NOT RETRY; send no second diagnostic/Storage request or cleanup command; full physical power OFF, USB unplugged, session ends. No forced semaphore release. A reset, new process, session identifier or deleted attempt marker is not a power-cycle substitute.
 
-## Already demonstrated
+Authentic `$82000-$821FF` coefficients have not been captured. P:`$0282-$0386` reclaim is not finally qualified; final safe P/X/Y budget remains UNKNOWN. Future four-track design shares model code and keeps independent track state; default mono, `MAX_TRACKS_PER_MODEL = 2`, `MAX_POLY_TRACKS = 2`, engine-specific polyphony, eventual 24 engines.
 
-- Exact Circuit firmware SYX → BIN → SYX round-trip.
-- DSP payload extraction and mapping.
-- Bounded execution of original DSP code in the DSP56300 emulator.
-- Standalone fixed-point VariableSaw-derived renderer as real DSP56300 code.
-- Bit-exact output against an independent integer oracle.
-- Native DIV optimization.
-- Register/scratch optimization.
-- Tightened reachable timing bound.
-- Candidate stock seam and software-only live-patch architecture.
-
-## Current blocker
-
-The 7-word persistent VariableSaw state cannot yet be placed in a proven-safe X-memory region under the retained-stock design.
-
-Next research target: qualify a **mutable P-memory-backed 7-word state object** and bound its MOVEM cost.
-
-See `docs/STATUS.md`.
-
-## Repository policy
-
-Do not commit proprietary Novation firmware, extracted DSP payloads, vendor PDFs, user projects, sample packs, or device dumps.
-
-See `docs/REPOSITORY_POLICY.md`.
-
-## Source layout
-
-- `tools/` — firmware/DSP analysis and validation utilities
-- `emulator/` — DSP56300 replay harnesses and tests
-- `plaits/poc/` — fixed-point VariableSaw/Plaits-derived PoC
-- `plaits/seam/` — integration seam work
-- `notes/` — detailed research history (including superseded branches)
-
-Upstream dependency source trees and proprietary firmware are not vendored. See `SOURCE_IMPORT.md`.
-
-## Disclaimer
-
-Unofficial research project. Not affiliated with or endorsed by Novation, Focusrite, Mutable Instruments, NXP, or upstream community projects.
+Historical build/evidence directories and the earlier `circuit-tracks-plaits-re/` source snapshot are preserved, not current operational instructions. Phase61/original Phase62 are FAILED / SUPERSEDED / DO NOT FLASH; Phase43 is SUPERSEDED. See [FINAL_DOCUMENTATION_AUDIT.md](<docs/FINAL_DOCUMENTATION_AUDIT.md>) for supersession and this update's audit.

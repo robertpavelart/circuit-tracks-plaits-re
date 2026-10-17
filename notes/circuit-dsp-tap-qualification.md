@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase20B7 — Circuit Tracks DSP TAP qualification
 
 2026-10-07. **DESIGN / DOCUMENTATION ONLY.** No board access, measurements,

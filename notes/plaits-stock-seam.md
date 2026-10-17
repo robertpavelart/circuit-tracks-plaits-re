@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 20B-SEAM — original-code boundary, replay refused
 
 ## Current Phase20C live-patch disposition — 2026-10-07
@@ -81,7 +83,6 @@ record for this exact patch plus one source-backed note/slot/history and bounded
 CPU context. Reports:stock-seam-checkpoint.md,stock-coefficient-provenance.md,
 stock-runtime-state.md. Canonical:builds/phase20b-checkpoint/final/.
 
-
 2026-10-07. **VERIFIED:** fresh byte checks establish the mono generation/post
 boundary. **TESTED:** preflight refuses the stock checkpoint before CPU creation.
 **UNRESOLVED:** successful stock/Plaits-fed post-processing, response, continuity
@@ -102,11 +103,11 @@ mono words X:[2C46,2C66). Natural fall-through then executes:
 
 | P | Bytes | Instruction / purpose |
 |---|---|---|
-|9D9|688700|load Y:7 intoR0, restoring the coefficient cursor|
-|9DA..9DC|000000 each|three NOPs before indirect R0 use|
-|9DD|56D800|load X:(R0)+ intoA: first post selector|
-|9DE|014085|compare selector with0|
-|9DF|0AF0AA 000A19|zero selects the simple BDD post path|
+|9D9| raw instruction bytes omitted |load Y:7 intoR0, restoring the coefficient cursor|
+|9DA..9DC| raw instruction bytes omitted |three NOPs before indirect R0 use|
+|9DD| raw instruction bytes omitted |load X:(R0)+ intoA: first post selector|
+|9DE| raw instruction bytes omitted |compare selector with0|
+|9DF| raw instruction bytes omitted |zero selects the simple BDD post path|
 
 9DD is already post-processing dispatch, not still lane synthesis. 9D9 is the
 pointer-restoration entry immediately after completed generator output. Including
@@ -138,7 +139,7 @@ was supplied. Downstream group/mixer/FX paths are separately scheduled.
 
 ## B–D. ABI, representation and guard
 
-See [plaits-stock-abi.md](plaits-stock-abi.md) for precise obligations and
+See [plaits-stock-abi.md](<plaits-stock-abi.md>) for precise obligations and
 `seam-liveins.json`, `guard-word.json`, `seam-clobbers.json`. Signed24 mono
 storage is verified; absolute audio normalization and stable feedback headroom
 are not. Q1.23 is not adopted as a calibrated stock buffer/audio ABI.
@@ -204,7 +205,7 @@ instructions/0 joined blocks/0 CPU instances. Eleven unit tests pass.
 
 ## J–O. Workload and budgets
 
-See [plaits-stock-workload.md](plaits-stock-workload.md). No retained per-voice,
+See [plaits-stock-workload.md](<plaits-stock-workload.md>). No retained per-voice,
 group/block, adapter or call-glue cycle measurement is available. LayerA remains
 the validated prior renderer; layersB/C are **UNRESOLVED**. Do not turn issued
 body counts from Phase5/6 into stock cycles. Known ten-generator upper subtotal

@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # DSP host communication and ARM correlation — build 4486
 
 Phase 4 update: see `voice-descriptor-map.md` for the instruction-level event,
@@ -13,16 +15,7 @@ are byte addresses. VERIFIED is static evidence, not an on-device observation.
 
 **VERIFIED, normal selection/channel zero:**
 
-```text
-SHI receive-FIFO-not-empty vector P:0x44
-  JSR P:0x156
-    save state to Y:0x2000..0x2005
-    P:0x15E reads HRX at X:0xFFFF94
-    P:0x15F tests GPIO PDRC bit 8 (X:0xFFFFBD)
-      low: P:0x198 writes a data word through the saved address
-      high: P:0x161 begins command-bit dispatch
-    restore state; RTI at P:0x1B3
-```
+> Instruction/listing excerpt omitted from public copy; original evidence remains local.
 
 This is a GPIO-qualified, stateful memory-access protocol. The received top
 byte is not a standalone note-on/note-off opcode namespace. No high-level

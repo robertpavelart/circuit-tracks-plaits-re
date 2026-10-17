@@ -12,8 +12,4 @@ Reset vector: 0x0805C00D
 Reset code address: 0x0805C00C
 Recommended image base for Ghidra: 0x08010000
 
-Useful strings (file offset -> runtime address at base 0x08010000):
-  ">> DSP Uploading...": 0xF5F0 -> 0x0801F5F0
-  "<< DSP Uploaded": 0xF608 -> 0x0801F608
-  "Circuit Tracks": 0x15A54 -> 0x08025A54
-  "GB1.1.5143.4486": 0x1CE -> 0x080101CE
+Extracted stock strings omitted; firmware is a local-only input.

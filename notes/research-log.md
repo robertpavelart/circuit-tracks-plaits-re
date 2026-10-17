@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Research log — Circuit Tracks build 4486
 
 ## Phase20C6-ARCHSELECT (2026-10-07)
@@ -283,7 +285,6 @@ record for this exact patch plus one source-backed note/slot/history and bounded
 CPU context. Reports:stock-seam-checkpoint.md,stock-coefficient-provenance.md,
 stock-runtime-state.md. Canonical:builds/phase20b-checkpoint/final/.
 
-
 ## Phase 20B-SEAM — replay admission refused (2026-10-07)
 
 **VERIFIED:** fresh original-byte map selects9D9 (R0 reload +3NOPs), with9DD
@@ -311,7 +312,6 @@ checkpoint upstream of9D9; qualify stock-only post replay before Plaits feeding.
 Reports:plaits-stock-seam.md,plaits-stock-abi.md,plaits-stock-workload.md.
 Canonical:builds/phase20b-seam/final/; unexecuted trace dirs contain refusal.json.
 
-
 ## Phase 20A-BOUND — current timing result (2026-10-07)
 
 **TESTED / CALCULATED:** unchanged442P renderer, reset-reachable maximum13335
@@ -332,7 +332,6 @@ any ten-voice claim, only under a separate phase request.
 Report:notes/plaits-reachable-timing-bound.md. Evidence:builds/phase20a-bound/final/.
 Earlier timing maxima/bounds below remain historical; this section supersedes
 those values for the unchanged REGOPT renderer's legal standalone domain.
-
 
 ## 2026-10-07 — Phase 20A-REGOPT: exact scratch/register optimization complete
 
@@ -611,7 +610,7 @@ stock allocation, model switching, polyphony or P9DD integration.
 - **ACTUAL-DATA VERIFIED:**12 ZIPs in Components Cache_Data have index.json
   product=circuit-tracks, version2.0,64 sample URL entries. Sources f_00008c,
   133,185,186,197,198,199,19a,19b,19c,19d,1d1. Real names/full hashes/paths/
-  mtimes/member listing provenance in[dsp-asset-offline-data.md](dsp-asset-offline-data.md)
+  mtimes/member listing provenance in[dsp-asset-offline-data.md](<dsp-asset-offline-data.md>)
   and dataset-manifest.csv.52,223,108 bytes of original ZIP snapshots retained;
  1601 file members hashed/CRC-checked without decoding audio samples.
 - **VERIFIED archive maps:**samples[i].url=samples/sample_i.wav for each0..63;
@@ -710,7 +709,7 @@ tools/ct_assetdata_discover.py. No downloads/installations/device operations.
   overwrite refusal,expectedSYX/BIN/roundtrip/all10extracts/sealed19A/priorhelper
   checksPASS;0CPUops. Canonicalbuilds/phase19c-backendbound/final-v3/,checks-v3/,
   probe-canonical/. Detailedmap:dataflow/roles/premises in
-  [dsp-asset-backend-bounds.md](dsp-asset-backend-bounds.md).
+  [dsp-asset-backend-bounds.md](<dsp-asset-backend-bounds.md>).
 - **Next:** obtainexistingoffline sourcefiles andcomputeactualcumulativeaddresses.
   Keepotherhostcache/order/ancestry,204B,DSPindirectwritersindependent;
   targetbridgeunchanged,parentreplayNO.
@@ -773,7 +772,7 @@ builds/phase19c-backendbound/new-checks`. Fresh confined outputs; no installatio
   files identical across repeats,9 arithmetic tests, overwrite refusal and
   original SYX/BIN/roundtrip/all10 extracts/sealed19A/prior fullhelper checksPASS.
   Zero CPU instructions, offline only. Details and exact instruction witnesses:
-  [dsp-asset-loader-bounds.md](dsp-asset-loader-bounds.md), canonical
+  [dsp-asset-loader-bounds.md](<dsp-asset-loader-bounds.md>), canonical
   builds/phase19c-assetbound/final-v2/,checks-v2/,probe-canonical/.
 - **Single best next step:**26610/backend20006914+8 accepted normal aggregate
   length validation, then retainedX11 space before claiming normalX intersections.
@@ -830,7 +829,7 @@ then `tools/ct_asset_bounds.py --probe-dir builds/phase19c-assetbound/new-probe
   0 ARM/DSP CPU instructions. Existing local Capstone5.0.7 read-only access
   approved outside sandbox; no install/network/hardware/packets/firmware changes.
 
-Report/commands: [dsp-host-write-provenance.md](dsp-host-write-provenance.md).
+Report/commands: [dsp-host-write-provenance.md](<dsp-host-write-provenance.md>).
 Tools ct_hostwrite_probe.py, ct_arm_init_cache.py, ct_hostwrite_audit.py;
 tests test_hostwrite.py/verify_hostwrite.py. Evidence builds/phase19c-hostwrite/
 probe-final/, final-v3/, final-v3-repeat/, checks-v3/reproducibility.json.
@@ -879,7 +878,7 @@ page truncation and padding; cache ordering/204B remain independent.
 Reproduction: tools/ct_effect_target_bridge.py --output-dir fresh child of
 builds/phase19c-targetbridge/; emulator/tests/test_target_bridge.py and
 verify_target_bridge.py. Exact commands/report:
-[dsp-effect-target-bridge.md](dsp-effect-target-bridge.md), canonical final-v2/,
+[dsp-effect-target-bridge.md](<dsp-effect-target-bridge.md>), canonical final-v2/,
 final-v2-repeat/, checks-v2/reproducibility.json. **Next:** close normal ARM
 scalar/width/bulk endpoint and cursor-retention provenance intoP19D for these
 exact cells; preserve independent204B and generic-context obligations.
@@ -920,7 +919,7 @@ exact cells; preserve independent204B and generic-context obligations.
   **Next:** targeted producer/preservation proof for X95A..95F and copied
   X9DB..A11, proving a parent edge or excluding that predecessor.
 
-Commands and exact evidence: [dsp-parent-replay.md](dsp-parent-replay.md),
+Commands and exact evidence: [dsp-parent-replay.md](<dsp-parent-replay.md>),
 emulator/harness/parent/audit.py, emulator/tests/test_parent_gate.py,
 emulator/tests/verify_parent.py; builds/phase19c-parent/final-v3/,
 final-v3-repeat/, checks-v3/reproducibility.json. Manuals/core reused locally.
@@ -2590,7 +2589,6 @@ bytes passed. Fresh paths and overwrite refusal retained. Observation JSON
 contains logical requirements only, no device commands or execution.
 `builds/phase15/reproducibility.json` records the report hashes.
 
-
 ## Phase 16 — static observation-path assessment (2026-10-06)
 
 **VERIFIED:** service5E reaches ARM269E4 through1EB30→2484C→1F284→1F30A,
@@ -2658,7 +2656,6 @@ exact SYX roundtrip, ARM/DSP byte witnesses and256 codec-group fixtures pass.
 Existing-output refusal was exercised and rejected the replay without changes.
 No original or firmware binary was modified.
 
-
 ## Phase 17 — exact debug/board/passive observation assessment (2026-10-06)
 
 **VERIFIED local evidence:** existing DSP56300 disassembly, SHI/ESAI/ICC and
@@ -2714,7 +2711,6 @@ builds/phase17/reproducibility.json records report and input hashes. Supplied
 SYX/BIN hashes, all five DSP extraction pairs, decodedBIN equality, exactSYX
 roundtrip and local source-witness assertions passed. Original files remain
 unchanged. These are offline integrity checks, not emulator execution tests.
-
 
 ## Phase 18 — minimal offline DSP replay design (2026-10-06)
 
@@ -2773,7 +2769,6 @@ all five extraction pairs, decoded-BIN equality, exactSYXroundtrip and bytecheck
 DSP/source witnesses pass. This is evidence-integrity verification only; all
 proposed emulator execution/validation tests remain NOT RUN.
 
-
 ## Phase 19A — first offline emulator implementation (2026-10-06)
 
 **IMPLEMENTED:** localcopy of core44353be2f0156cac970c6ab4f467ea1998b40605,
@@ -2815,7 +2810,6 @@ notautomaticstartup. X35F/high-XnormalNOT-YET-DETERMINED,serviceNO.
 Created notes/dsp-emulator-phase19a.md anddsp-emulator-write-paths.md; implementation
 andtests underemulator/; canonicaltracesfinal/ and repeat/ underphase19a.
 No hardware,MIDI/SysEx,OnCE/JTAG,flashing,originalchanges orPlaits work.
-
 
 **Phase19A final coverage extension:** tested the remaining active DMA fill/copy branches: P-destination fill, peripheral-source repeated-read fill and peripheral destination copy. All37 fixtures pass in4runs across2independent builds. Canonical outputs are builds/phase19a/validated/ and validated-repeat/; reproducibility-final.json supersedes the interim34-fixture report. Source/harness registry updated after review and positive audit passes. No stock execution or firmware changes.
 

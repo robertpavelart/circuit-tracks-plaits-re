@@ -1,8 +1,10 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 6B — persistent-memory ownership and seam safety
 
 ## Phase 12 update — normal versus explicit service
 
-[dsp-effect-memory.md](dsp-effect-memory.md) is current; machine evidence in
+[dsp-effect-memory.md](<dsp-effect-memory.md>) is current; machine evidence in
 `builds/phase12/final/`. X[5F00,6000): **NORMAL-RUNTIME SAFE NOT-YET-DETERMINED**,
 **SERVICE-ROBUST NO**.5E service overlap does not prevent a normal-only proof.
 No verified normal occupancy or available256/128/64-word region.
@@ -29,7 +31,7 @@ Next: close202B destination records. No memory writes, firmware patches or port.
 
 ## Phase 10 update — 2026-10-06
 
-See [dsp-high-x-audit.md](dsp-high-x-audit.md), canonical `builds/phase10/replay/`.
+See [dsp-high-x-audit.md](<dsp-high-x-audit.md>), canonical `builds/phase10/replay/`.
 **UNRESOLVED:** private channel-zero X:[5F00,6000) persistence. No verified
 available 256/128/64-word subrange and no normal occupancy witness established.
 Startup clearing is **VERIFIED INIT-ONLY**, not a runtime disqualification.
@@ -54,7 +56,7 @@ Earlier next-step paragraphs are historical; trace that ARM dispatcher next.
 
 ## Phase 8 update — 2026-10-06
 
-See [plaits-poc-memory.md](plaits-poc-memory.md) and builds/phase8/ for the
+See [plaits-poc-memory.md](<plaits-poc-memory.md>) and builds/phase8/ for the
 latest evidence and progressive64/128/256/512/1024-word allocation search.
 Both high candidates remain **POTENTIALLY AVAILABLE / UNRESOLVED** after init;
 neither has a verified safe subrange. Boot clearing remains **INIT-ONLY**.
@@ -88,7 +90,7 @@ rendering is **HYPOTHESIS**, subject to numeric, live-state and lifetime proof.
 
 **Phase 6C correction:** boot initialization does NOT disqualify persistent
 allocation afterward. The strict no-initialization-use conclusions below are
-historical and superseded by [dsp-runtime-ownership.md](dsp-runtime-ownership.md).
+historical and superseded by [dsp-runtime-ownership.md](<dsp-runtime-ownership.md>).
 Both candidates are INIT-TOUCHED; availability after init still requires normal
 runtime exclusion. Diagnostic capability and private worker numeric equality
 are not channel-zero runtime ownership evidence. Reading Plaits only for a

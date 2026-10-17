@@ -1,3 +1,5 @@
+> Historical experiment scope, not the current global project stop point. [Current state](../../../docs/CURRENT_STATUS.md).
+
 # Focused original stock checkpoint provenance
 
 recover.py reads existing original firmware, byte-verified narrow disassembly,

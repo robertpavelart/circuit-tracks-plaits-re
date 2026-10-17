@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19B-ROM — source recovery and exit-state decision
 
 2026-10-06. **ROM source was not recovered. Authentic stock execution remains

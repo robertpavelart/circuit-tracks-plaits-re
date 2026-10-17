@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19B-HANDOFF — minimum state and execution decision
 
 2026-10-06. **Execution remains blocked. Original main/worker/bootstrap

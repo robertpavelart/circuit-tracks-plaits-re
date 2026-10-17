@@ -1,3 +1,5 @@
+> Historical experiment scope, not the current global project stop point. [Current state](../../../docs/CURRENT_STATUS.md).
+
 # Phase20B3 static input qualification
 
 No CPU execution is enabled. Reuse the selected authored patch and earlier

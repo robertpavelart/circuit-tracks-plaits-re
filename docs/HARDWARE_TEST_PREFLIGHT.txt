@@ -1,0 +1,32 @@
+HARDWARE TEST PREFLIGHT — PREPARATION ONLY / NOT AN ENABLED RELEASE
+OPERATIONAL PREFLIGHT = UNQUALIFIED
+POST-READY ALLOCATION CENSUS = UNQUALIFIED
+USB STORAGE JOINT PATH = PASS (36 focused offline cases)
+
+No candidate hardware test has occurred. Risk of a soft brick requiring recovery
+is accepted by the user, provided bootloader access remains; recovery is not guaranteed.
+The allocation proof remains incomplete; acceptance is not proof or a tool unlock.
+Host and uploader remain LOCKED. A separately reviewed operational release with
+new hashes and explicit treatment of residual risk precedes any hardware use.
+
+FUTURE EXPLICITLY AUTHORIZED SESSION ONLY
+[ ] Verify every package hash on actual sending machine; verify candidate/rollback/tool identities.
+[ ] Recovery entry/exit rehearsal is user-proven; recovery enumeration, handshake,
+    B1.3/4486 recovery flashing and non-booting-candidate recovery remain unproven.
+[ ] Apply/verify prepared Windows removable-storage deny-access policy before
+    connection. Automount alone is insufficient. Policy has not been physically
+    applied/tested with this unit. Unexpected mounted volume/storage access: STOP.
+[ ] Close Components, DAWs and other MIDI users. No Explorer browsing, scan/repair,
+    format, filesystem utilities or SD changes.
+[ ] Install only under separately reviewed operational release and explicit decision.
+[ ] Geometry query first; independently validate retained geometry and $82000 safety.
+[ ] Authorize only exact validated epoch/geometry/session; exactly one fixed capture.
+    Optional $81000 requires separate target authorization. No retries/reconnect bypass.
+[ ] SUCCESS: accept only complete validated evidence, hash/archive provenance,
+    then restore B1.3 using agreed rollback plan.
+[ ] FAILURE/UNCERTAINTY: discard partial evidence; no retry, no second diagnostic/
+    Storage request, no forced cleanup; full physical power OFF, USB unplugged,
+    session ends. Do not delete/reuse attempt marker. H4 remains FAIL.
+
+This documentation task performs no hardware action, OS-policy change or transmission.
+Current authority: docs/CURRENT_STATUS.md and docs/NEXT_STEPS.md in project root.

@@ -1,0 +1,15 @@
+> Saved phase-scoped evidence; original next-step instructions are historical. [Current project state](../../CURRENT_STATUS.md).
+
+# Phase51 — no admitted hardware query
+
+**UNKNOWN:** the prerequisite of reliably authenticated successful physical read is unmet. Therefore no hardware execution is authorized or recommended by this report. The following is a bounded candidate specification only, not an instruction to enter a mode or read a device.
+
+**PROVEN minimal candidate:** existing transient vendor42/sub0 mode1, deferred150-tick application callback completes to stable mode1; LUN0 READ CAPACITY establishes8192×4096, then one READ10 at USB LBA40hex (64), count1, expected4096 bytes from NOR D4000. Ordinary MIDI and MSD coexist. Normal exit candidate is transientmode0 through the same dispatcher/callback, not UI settings toggle or SCSI eject. No reboot is needed by these native application bodies. [mode1-entry-exit.md](<mode1-entry-exit.md>); [minimum-sector-plan.md](<../phase50-msd-readonly-geometry/minimum-sector-plan.md>).
+
+One VBR sector suffices for superfloppy geometry. A second sector is necessary when the first is MBR and identifies the volume VBR; it materially resolves volume location but does not authenticate lower completion. Additional FAT/backup/data reads are not justified solely to hide the lost-status problem. No read of81000/82000 payloads is needed.
+
+Required before any future use: current-unit/B1.3 provenance; independently established stable mode/window and raw LUN binding; prevent host filesystem automount/repair; no active update, queued mutation, or pre-existing Storage fault; successful-read validity signal beyond byte plausibility or a justified lower completion invariant; explicit containment. Read-only OS access and no host FS mount would be required. No drive index, live command packet, MIDI/USB helper or acquisition script is generated here.
+
+Abort/invalid conditions: timeout, stalled command, USB error, wrong length, changed binding, unexpected metadata or any structural gate failure. Do not save an accepted geometry file, retry, flush, send storage cleanup, force-release semaphores, issue update commands or infer geometry from partial data. Structurally valid but physically unauthenticated data remains UNQUALIFIED. Existing one-shot containment is retained; power-cycling is not certified as a no-persistence substitute for normal exit. [geometry-acceptance-gate.md](<geometry-acceptance-gate.md>); [read-error-propagation.md](<read-error-propagation.md>).
+
+Smallest remaining offline qualification: exercise the actual37430/37596/controller IRQ and DMA completion predicates at4096 bytes through this coupled wrapper/BOT runner, without replacing physical-read completion with a success seam. Determine whether every native return0 guarantees all geometry-bearing bytes came from the addressed NOR and whether a completed fault can pass the gate. Reuse Phase31 wait/TEF evidence; do not redo completed mapping or invent a new firmware command. USB HAL callback/lifetime and background scheduling limits remain separately stated.

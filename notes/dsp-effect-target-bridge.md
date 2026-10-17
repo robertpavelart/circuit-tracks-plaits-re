@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19C-TARGETBRIDGE — selectors, targets and mutation provenance
 
 ## Phase 19C-P204B — latest independent mutation gate (2026-10-06)
@@ -20,7 +22,7 @@ normal host ordering/foreign aliases remain open. SERVICE capability separate.
 P1E15 reachability staysUNRESOLVED; active-parent replayNO; no bridge recomputation,
 no new CPU replay (0 instructions). PACKLINK asset evidence remains frozen and
 scoped, not reopened or universally promoted. See
-[dsp-p204b-provenance.md](dsp-p204b-provenance.md), final-v4/checks-v4/.
+[dsp-p204b-provenance.md](<dsp-p204b-provenance.md>), final-v4/checks-v4/.
 Next independent obligation: normalP19D saved cursor/cache provenance specifically
 to35F/compiled-record words, before any positive consumer checkpoint.
 
@@ -42,7 +44,7 @@ P1E15 reachability staysUNRESOLVED; no target-producing state, target-bridge
 recomputation or active-parent replay is admitted. X35F/persistent high-X are not
 promoted. Stop asset archaeology without new existing offline native/selection
 evidence. Next independent obligation:P:0x204B count/record destinations; not
-analyzed in PACKLINK. See [PACKLINK](dsp-pack-native-link.md) and
+analyzed in PACKLINK. See [PACKLINK](<dsp-pack-native-link.md>) and
 builds/phase19c-packlink/final-v2/. Earlier gate/priority statements are retained
 as historical results, superseded only by these scoped correspondence findings.
 
@@ -57,7 +59,7 @@ records selectY after final802C miss; all-normal foreign ordering unproved.
 Asset family NOT CLOSED,1E15 reachabilityUNRESOLVED, parent replayNO.
 No bridge recomputation,204B analysis or broad alias census. **STOP for missing
 offline data:** selected PCM directory/files and selection association needed.
-See[dsp-asset-backend-bounds.md](dsp-asset-backend-bounds.md), canonical
+See[dsp-asset-backend-bounds.md](<dsp-asset-backend-bounds.md>), canonical
 builds/phase19c-backendbound/final-v3/:12 repeat-identical files,8 tests and
 protected firmware/extract/core checksPASS,0 CPU instructions.
 
@@ -74,12 +76,12 @@ DEPENDENT, actual normalX writability UNRESOLVED. This family remains inP19D
 mutation obligations; P1E15 reachability staysUNRESOLVED, replayNO.
 No bridge recomputation,204B analysis or generic DSP alias census. Independent
 host coherence/ancestry and other DSP writers stay open. See
-[dsp-asset-loader-bounds.md](dsp-asset-loader-bounds.md), canonical
+[dsp-asset-loader-bounds.md](<dsp-asset-loader-bounds.md>), canonical
 builds/phase19c-assetbound/final-v2/;11 reproducible files,9 tests/guards,0 CPU ops.
 
 ## Phase 19C-HOSTWRITE — latest host gate
 
-2026-10-06. [dsp-host-write-provenance.md](dsp-host-write-provenance.md)
+2026-10-06. [dsp-host-write-provenance.md](<dsp-host-write-provenance.md>)
 verifies ARM cache20003D00 INITFFFF through an original compressed-data record,
 not CPU boot execution. Cache hits retain DSP cursor/space; scalar reads leave
 a+2 without explicit invalidation; page/extended write headers retainX11.

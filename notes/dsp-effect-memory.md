@@ -1,8 +1,10 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 12 — normal effect/scratch audit and independent safety levels
 
 ## Phase 19C-TARGETBRIDGE — table persistence and target sets
 
-2026-10-06. Current report: [dsp-effect-target-bridge.md](dsp-effect-target-bridge.md),
+2026-10-06. Current report: [dsp-effect-target-bridge.md](<dsp-effect-target-bridge.md>),
 canonical evidence builds/phase19c-targetbridge/final-v2/ and checks-v2/.
 **VERIFIED conditional:**55 initialized targets generate six wrapper targets
 DB7/DCF/DD3/DDC/DE6/DF3 and eleven algorithm targets, none1E15. DDC's copy
@@ -20,7 +22,7 @@ pass;0 DSP instructions. No parent bridge or active-loop replay justified.
 
 ## Phase 13 update — descriptor count correction
 
-Current scoped report: [dsp-indirect-write-204b.md](dsp-indirect-write-204b.md),
+Current scoped report: [dsp-indirect-write-204b.md](<dsp-indirect-write-204b.md>),
 evidence `builds/phase13/final/`, reusable `tools/ct_indirect_204b_audit.py`.
 **VERIFIED:**204B performs one X-word read/modify/write per five-word record.
 ARM286E4 explicitly sets the compiled/global count35F+172*bank to **zero**;

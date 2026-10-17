@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19B-SYMBOLIC — genuine dependency frontier
 
 2026-10-06. SYMBOLIC support implemented; the success criterion was NOT MET.

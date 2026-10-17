@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase20B7 — OnCE controller qualification
 
 2026-10-07. **PLAUSIBLE TOOLCHAIN; NO QUALIFIED CONTROLLER/SOFTWARE PAIR.**

@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 20A-DIV — native ratio qualification and standalone comparison
 
 ## Phase 20A-REGOPT update — helper unchanged, caller optimized (2026-10-07)
@@ -9,7 +11,7 @@ Original43 cases and9 focused cases,388096 samples/all seven block states,
 match golden/oracle exactly and repeat. **CALCULATED / CONDITIONAL:** matched
 mean7270.1787 clocks (-22.1511%,STRONG), all-validated peak12670,upper12682,
 structural23902. Native/restoring sources/artifacts remain unchanged.
-Report:[plaits-register-optimization.md](plaits-register-optimization.md).
+Report:[plaits-register-optimization.md](<plaits-register-optimization.md>).
 No stock allocation, firmware changes or integration; feasibility **UNRESOLVED**.
 
 ## Phase 20A-TIMING update — offline cycle model complete (2026-10-06)
@@ -22,8 +24,8 @@ conservative valid-API structural upper30123 under private-memory/noIRQ/noDMA
 assumptions. Conditional163840 budget:one mean5.70%,worst9.77%,structural18.39%.
 Ten observedworst97.66% before stock work; integration remains **UNRESOLVED**.
 No code/algorithm/oracle change or rerender. Reports:
-[plaits-cycle-audit.md](plaits-cycle-audit.md),
-[dsp56300-timing-model.md](dsp56300-timing-model.md).
+[plaits-cycle-audit.md](<plaits-cycle-audit.md>),
+[dsp56300-timing-model.md](<dsp56300-timing-model.md>).
 Canonical timing exports:builds/phase20a-timing/final/, repeat/, checks/, rates/.
 The earlier next-step statement below is now completed; next is a separately
 requested standalone scratch/register-scheduling optimization, not integration.

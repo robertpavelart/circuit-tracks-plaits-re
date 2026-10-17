@@ -1,0 +1,49 @@
+WINDOWS / MSD POLICY - PREPARED ONLY, NOT APPLIED
+OPERATIONAL PREFLIGHT = UNQUALIFIED. No connection/device/OS-policy action here.
+
+RISK: A mounted writable filesystem permits Windows/app writes (including maintenance
+or repair). The initialized candidate normally rejects WRITE10, but this does not
+prove malformed BOT/state isolation. Reads/probes may contend for shared Storage.
+Automount disable is NOT a universal write blocker and does not exclude known volumes.
+
+PRE-CONNECTION PROCEDURE for a later explicitly authorized session:
+1. Back up projects/SD first. Keep Circuit Tracks USB disconnected. Use an isolated
+   Windows test account/machine with no storage jobs; close DAWs/Components/MIDI users.
+2. Record existing automount policy in elevated DiskPart:
+      diskpart
+      automount
+      automount disable
+      exit
+   This changes host-wide policy for new mounts; no scrub/format/clean commands.
+   mountvol /N is an alternative new-basic-volume automount control, not an extra
+   write-isolation guarantee. Do not blindly re-enable later; restore prior policy.
+3. Before connection, in supported Windows Pro/Enterprise/Education Group Policy:
+   Computer Configuration > Administrative Templates > System > Removable Storage
+   Access > All Removable Storage classes: Deny all access = Enabled.
+   This denies both normal removable-storage reads AND writes, reducing contention.
+   It is stronger than only denying write access or disabling drive letters.
+4. Apply policy (gpupdate /force); if Windows requests reboot, reboot PC while the
+   device remains disconnected. Inspect effective computer policy (gpresult) and
+   HKLM\Software\Policies\Microsoft\Windows\RemovableStorageDevices Deny_All=1.
+   A registry value alone is not proof of enforcement on this actual USB interface.
+   If edition/policy/class applicability cannot be established, STOP: no fallback
+   to automount-only claimed safe. Do not disable the whole composite USB parent,
+   which would also prevent the intended MIDI transport.
+5. During any later authorized connection, no scan/repair, format, drive browsing,
+   filesystem utilities, vendor mode changes or SD touches. Unexpected mounted
+   volume, policy failure or storage access -> STOP; no diagnostic authorization.
+   Never use this unit as a test target for write attempts to verify the policy.
+6. After the session, with device disconnected, restore only documented prior host
+   policies. Host-wide denial may affect other removable storage/backup workflows.
+
+LIMIT: These policies are OS filesystem-access controls, not a proof of zero USB
+class probes or every kernel/driver command. Actual interface classification,
+policy enforcement and MIDI coexistence remain untested. Complete BOT concurrency
+closure is still UNKNOWN and is an unclosed gate, not fixed by a paper checklist.
+
+Official Microsoft references, read during this audit:
+https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/automount
+https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mountvol
+https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-admx-removablestorage
+The first two define new-volume mount controls; the third documents computer-scope
+RemovableStorageClasses_DenyAll_Access_2. No claim of a universal bus write firewall.

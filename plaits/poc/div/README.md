@@ -1,3 +1,5 @@
+> Historical experiment scope, not the current global project stop point. [Current state](../../../docs/CURRENT_STATUS.md).
+
 # Standalone native DIV variant
 
 Phase20A-DIV only; derived VariableSaw arithmetic retains the MIT notices in

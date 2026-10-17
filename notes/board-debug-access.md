@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 17 — Circuit Tracks board observation access
 
 2026-10-06. Public-document/source research only; no hardware/disassembly of a
@@ -66,4 +68,4 @@ and EXTEST/CLAMP/HIZ can actively alter them; not a compliantRAM observer.
 
 **Gate:** board access to a qualifying passive DSP state facility remains
 NOT-YET-DETERMINED. Keephardware disconnected. See
-[dsp-debug-observation.md](dsp-debug-observation.md) for the offline alternative.
+[dsp-debug-observation.md](<dsp-debug-observation.md>) for the offline alternative.

@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # DSP56300 timing model — Phase 20A-TIMING
 
 2026-10-06. **SOURCE-DERIVED / CALCULATED / CONDITIONAL.** This model evaluates

@@ -1,15 +1,17 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 6 — static DSP resource audit, build 4486
 
 **Current Phase 6C criterion:** INIT-TOUCHED and RUNTIME-OWNED are separate.
 Startup clear does not disqualify later allocation. See
-[dsp-runtime-ownership.md](dsp-runtime-ownership.md): normal destination
+[dsp-runtime-ownership.md](<dsp-runtime-ownership.md>): normal destination
 constants and selected intervals are bounded, computed/ancestry exclusions
 are incomplete, and no RAM allocation is VERIFIED AVAILABLE AFTER INIT.
 Reading Plaits solely to compare resource needs is ready; safe fit and
 implementation remain NOT-YET-DETERMINED. Earlier blanket comparison and
 initialization-disqualification gates below are superseded.
 
-**Phase 6B update:** [dsp-memory-ownership.md](dsp-memory-ownership.md)
+**Phase 6B update:** [dsp-memory-ownership.md](<dsp-memory-ownership.md>)
 proves startup writes across both candidate X/Y ranges. They fail the strict
 no-initialization-use availability criterion; persistent runtime ownership is
 still unresolved. It also adds the X:2C66 prefetch/readability obligation,

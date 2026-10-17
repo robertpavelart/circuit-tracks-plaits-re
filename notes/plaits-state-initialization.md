@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase20C2 — exact seven-word layout and initialization contract
 
 ## Follow-up P-object test — 2026-10-07

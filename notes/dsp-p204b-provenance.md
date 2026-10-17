@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19C-P204B — count and destination-record provenance
 
 2026-10-06. **Result D: positive-count normal reachability remains UNRESOLVED.**

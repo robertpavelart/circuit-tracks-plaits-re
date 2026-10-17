@@ -1,0 +1,19 @@
+> Saved phase-scoped evidence; original next-step instructions are historical. [Current project state](../../CURRENT_STATUS.md).
+
+# Phase50 — MSD read-only geometry feasibility
+
+**PROVEN:** existing exact B1.3 contains a USB/SCSI NOR read path capable of reaching the required filesystem's physical backing, without diagnostic firmware. In stable internal mode1, USB LBA40hex (64), count1,4096 bytes maps to NOR D4000, the same base used by disk0/FatFs. Its declared window endD3FFF is not enforced by READ10/backend; fixed capacity is8192×4096. This corrects the assumption that ordinary MSD necessarily exposes only the unrelated94000 window. [msd-backing-store.md](<msd-backing-store.md>); [physical-binding.md](<physical-binding.md>).
+
+**PROVEN:** seven normal SCSI slices (TUR, INQUIRY, CAPACITY, fourREAD10 mappings) pass with zero guarded persistence/FS-flush calls; four existing vendor-mode/deferred class-rebuild slices pass. Queue, NOR and USB-driver/transport seams are explicit. **PROVEN:** offline sector decoder matches native B1.3 mount for four normal superfloppies and one MBR volume;15 rejected cases cover invalid/incomplete/binding data. No current-unit sectors were acquired. native-reads.json (local-only reference: `builds/phase50-msd-readonly-geometry/native-reads.json`; not distributed); geometry-tests.json (local-only reference: `builds/phase50-msd-readonly-geometry/geometry-tests.json`; not distributed).
+
+**PROVEN READ-ONLY:** the read command's own producer graph submits raw read op1, not a write/erase/FatFs flush; no settings/update/reset call is in the reviewed read body. **STRONG INFERENCE:** an established stable mode1, idle queue and successful physical read could retrieve the one/two required sectors using standard raw block access. [scsi-read-path.md](<scsi-read-path.md>); [minimum-sector-plan.md](<minimum-sector-plan.md>).
+
+**UNKNOWN — final admission remains open:** complete transient entry/USB-driver no-persistence closure, current selected mode/host raw-device binding without automount, and physical read failure/completion propagation. Backend read drains an existing queue and discards the NOR-wrapper result before returning0. UI bit17 enablement can save settings, so it is not an acceptable assumed read-only entry. BPB bytes also do not directly export live mount/cache status. These are specific limitations, not proof the existing path cannot work. [mode-entry.md](<mode-entry.md>); [readonly-safety.md](<readonly-safety.md>).
+
+The minimal **conditional** plan is LUN0, fixed mode1, READ10 LBA64 count1; only if MBR, the selected primary VBR candidate(s). No unrelated files/FAT chains/target payloads, new firmware, hardware action, port opening or transmission. The parser and full field derivation are ready in [geometry_from_sector.py](<../../../builds/phase50-msd-readonly-geometry/geometry_from_sector.py>).
+
+Smallest next offline experiment: close the existing vendor42 mode1 entry through full upstream dispatcher plus real USB-class/driver callbacks with write/erase/settings/flush traps; then couple the existing read wrapper/worker error outcomes to SCSI completion without replacing those boundaries with success. No new firmware or hardware is required for that experiment. Do not repeat the completed geometry/mapping investigation.
+
+Least-invasive evidence options remain: existing actual-unit geometry/status or previously acquired relevant raw sectors; existing stock MSD route after its admission gaps are closed; historically tested rdiag only if independently already installed (B1.3 omits it); only last a separately authorized temporary diagnostic. None is initiated here. Current-unit geometry and candidate admission remain unchanged. Prior49 and pinned reference integrity checks: validation.json (local-only reference: `builds/phase50-msd-readonly-geometry/validation.json`; not distributed).
+
+MSD READ-ONLY GEOMETRY PATH = UNQUALIFIED

@@ -1,3 +1,5 @@
+> Historical experiment scope, not the current global project stop point. [Current state](../CURRENT_STATUS.md).
+
 # Phase 20A-BOUND — legal VariableSaw timing domain
 
 Completed 2026-10-07. **TESTED / CALCULATED:** the unchanged 442-P-word renderer

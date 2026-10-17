@@ -1,16 +1,32 @@
 {
-  "repo_name": "circuit-tracks-plaits-re",
-  "snapshot_date": "2026-10-09",
-  "current_stage": "Phase 20C3 — P-backed persistent-state qualification",
+  "repository": "robertpavelart/circuit-tracks-plaits-re",
+  "branch": "docs/final-prehardware-review",
+  "snapshot_date": "2026-10-17",
+  "current_stage": "final pre-hardware review / separately reviewed operational-release preparation",
+  "current_artifact": "temporary NOR diagnostic; NOT Plaits firmware; artifact bytes not distributed",
   "flash_ready": false,
-  "actual_local_source_included": true,
-  "hardware_policy": "No opening/probing; external interfaces only",
+  "hardware_tested_candidate": false,
+  "operational_preflight": "UNQUALIFIED",
+  "post_READY_allocation_census": "UNQUALIFIED",
+  "USB_storage_joint_path": "PASS within declared offline scope",
+  "live_tools_enabled": false,
   "source_roots": [
     "tools",
     "emulator",
     "plaits",
-    "notes"
+    "notes",
+    "docs",
+    "selected individually reviewed source files under builds"
   ],
   "upstream_source_vendored": false,
-  "proprietary_firmware_included": false
+  "proprietary_firmware_included": false,
+  "device_dumps_included": false,
+  "candidate_metadata": {
+    "marker": "N63DEV",
+    "SYX_bytes": 569229,
+    "SYX_sha256": "9b420521a366c65c13fb871778fdbab612ca126cbb4ad60d0fd5bc12ecd253da",
+    "BIN_bytes": 413952,
+    "BIN_sha256": "edf4f267030a6c5e8198213372086b89b4ccaaae74741e80ce7c241129a91cd9",
+    "CRC32_MPEG2": "1BB21302"
+  }
 }

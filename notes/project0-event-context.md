@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase20B4 — event and retained-state admission
 
 2026-10-07. **PARTIAL / no selected event / no replay.**

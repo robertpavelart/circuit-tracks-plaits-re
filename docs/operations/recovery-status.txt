@@ -1,0 +1,25 @@
+RECOVERY STATUS — EVIDENCE LIMITS
+
+PROVEN BY USER ON PHYSICAL UNIT:
+- Recovery/bootloader mode can be entered.
+- Recovery mode can be exited by power cycling.
+- B1.3 boots normally afterward.
+- No firmware was transmitted during this rehearsal.
+
+These are user-reported physical-unit observations, not new agent observations.
+
+NOT PROVEN:
+- Recovery-mode host enumeration; existing evidence does not establish it.
+- Uploader handshake in recovery.
+- Actual recovery flashing of B1.3.
+- Actual recovery flashing of official 4486.
+- Recovery from a non-booting diagnostic candidate.
+- Guaranteed recovery.
+
+RISK STATEMENT:
+- No concrete path to bootloader loss has been identified in the candidate.
+- Bootloader remains outside the modeled application erase/program range.
+- Physical candidate-specific recovery remains hardware-only unknown.
+
+Offline install/rollback evidence does not establish physical recovery success.
+This packaging correction authorizes no hardware action or firmware transmission.

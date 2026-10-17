@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19B-HANDOFF — peer readiness and progress publication
 
 2026-10-06. **VERIFIED stock data flow / DOCUMENTED conditional device map.**

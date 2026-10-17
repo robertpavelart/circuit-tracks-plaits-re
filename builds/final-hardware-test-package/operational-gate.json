@@ -1,0 +1,5 @@
+{
+  "live_enabled": false,
+  "reason": "Frozen pre-hardware package; explicit decision and separately reviewed operational release required",
+  "candidate_SYX_sha256": "9b420521a366c65c13fb871778fdbab612ca126cbb4ad60d0fd5bc12ecd253da"
+}

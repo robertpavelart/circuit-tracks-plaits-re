@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 20B2-CHECKPOINT — PARTIAL provenance, REFUSED replay
 
 2026-10-07. A real cached patch now supplies the selector and coefficient-offset
@@ -6,8 +8,8 @@ addresses and dynamic builder are reconstructed. **No concrete original CPU/
 memory checkpoint naturally reaching9D9 was qualified.** The overall provenance
 result is **PARTIAL**; replay admission is **REFUSED**, not softened into success.
 
-Reports: [stock-coefficient-provenance.md](stock-coefficient-provenance.md) and
-[stock-runtime-state.md](stock-runtime-state.md). Canonical evidence is
+Reports: [stock-coefficient-provenance.md](<stock-coefficient-provenance.md>) and
+[stock-runtime-state.md](<stock-runtime-state.md>). Canonical evidence is
 `builds/phase20b-checkpoint/final/`; new focused tools are under
 `plaits/seam/checkpoint/`, tests in `emulator/tests/test_seam_checkpoint.py`.
 

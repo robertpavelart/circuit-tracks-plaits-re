@@ -1,0 +1,15 @@
+> Saved phase-scoped evidence; original next-step instructions are historical. [Current project state](../../CURRENT_STATUS.md).
+
+# Phase51 — MSD geometry read safety
+
+**PROVEN:** full existing B1.3 SysEx dispatcher→transient mode1/0→deferred class rebuild executes two entry/exit cycles with zero guarded Storage/persistence/mount/reset calls. This improves Phase50's isolated-handler evidence. USB HAL/scheduler boundaries remain modeled, so complete real-device side effects are not claimed. UI setting entry/exit can persist settings; transient exit itself has no such producer in the tested route. [mode1-entry-exit.md](<mode1-entry-exit.md>); mode-cases.json (local-only reference: `builds/phase51-msd-read-safety/mode-cases.json`; not distributed).
+
+**PROVEN:** mode1 USB LBA40hex→NOR D4000 is retained. Ten coupled native read cases execute clear→queue wrapper→worker→actual backend bounds/semaphore return→SCSI data→CSW. Four native early-error cases return1/2 yet deliver4096 zero bytes with GOOD CSW and zero residue. The parser rejects those zero sectors; prior successful contents were cleared. [read10-physical-path.md](<read10-physical-path.md>); read-cases.json (local-only reference: `builds/phase51-msd-read-safety/read-cases.json`; not distributed).
+
+**PROVEN status loss:** wrapper24130 returns the backend status correctly; MSD57ECE ignores it and57EEE returns0. **PROVEN** SCSI success/length alone cannot authenticate NOR success. **PROVEN model limitation:** a hypothetical512-byte DMA plus completion-return is byte-identical to a complete zero-tailed test BPB, so structural validation accepts it. This is not a demonstrated physical TEF success, incorrect geometry, or parser defect. **UNKNOWN:** real partial/error completion reachability and an independent trustworthy completion signal. [read-error-propagation.md](<read-error-propagation.md>); [stale-buffer-analysis.md](<stale-buffer-analysis.md>).
+
+**STRONG INFERENCE:** normal fault-free single-sector reads could provide correct BPB geometry without persistent commands. **UNKNOWN:** the full requested admission criterion—safe entry/exit under real callbacks/background context and reliable physical-read acceptance. No current-unit geometry is authenticated. Do not upgrade evidence based on a FAT-looking sector or assumed success. The strict offline gate reports INVALID or UNQUALIFIED, never a fabricated accepted capture. [geometry-acceptance-gate.md](<geometry-acceptance-gate.md>); [acceptance_gate.py](<../../../builds/phase51-msd-read-safety/acceptance_gate.py>).
+
+The minimal conditional one-sector candidate, MBR exception, abort rules and smallest remaining offline experiment are recorded in [minimum-hardware-read-plan.md](<minimum-hardware-read-plan.md>). No hardware action, MIDI opening, transmission, firmware generation/modification or historical candidate change occurred. PriorPhase50 and439 pinned reference sources are checked unchanged in validation.json (local-only reference: `builds/phase51-msd-read-safety/validation.json`; not distributed).
+
+MSD GEOMETRY READ SAFETY = UNQUALIFIED

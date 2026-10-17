@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase20B3 — exact-patch note/history frontier
 
 2026-10-07. **UNRESOLVED event; numerical replay REFUSED.** Bank0/slot0
