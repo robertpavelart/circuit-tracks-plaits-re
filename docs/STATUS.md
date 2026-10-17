@@ -2,95 +2,168 @@
 
 ## Current stage
 
-**Phase 20C3 — P-backed persistent-state qualification (next / active research target).**
+**Final pre-hardware review / operational-release preparation.**
 
-The runtime-snapshot branch is deferred for the first PoC. The current design executes inside the natural stock DSP runtime and replaces only the selected voice's final mono output.
+The current candidate is the unchanged Phase63 diagnostic firmware reviewed through Phase67.
 
-No custom firmware has been flashed.
+The current firmware is **not** Plaits firmware.
 
-## Live-patch candidate
+No hardware installation of the current diagnostic candidate has occurred.
 
-- Interception: `P:0x9B9` (conditional).
-- Continuation: original `P:0x9D9`.
-- Retain request/completion passes, worker/lookup behavior, phase/queue bookkeeping, six coefficient ramps, and the stock 32-word combiner.
-- Replace only selected bank0/slot0 mono32.
-- Leave `X:0x2C66` untouched.
-- Test discriminator: `X:0xCC = 0`, `R4 = 0x5AB`.
-- UI correspondence to Synth 1 remains a hypothesis.
+## Current candidate identity
 
-## VariableSaw renderer
+`circuittracks-nor-defect-closure-development.syx`
 
-| Resource | Result |
-|---|---:|
-| Program | 442 P words |
-| Persistent state | 7 words |
-| Scratch | 3 X spill words + 16 working registers |
-| Output | 32 Y words |
-| LUT | 0 |
-| Peak stack | 3 |
+- 569229 bytes
+- SHA-256: `9b420521a366c65c13fb871778fdbab612ca126cbb4ad60d0fd5bc12ecd253da`
+- CRC-32/MPEG-2: `1BB21302`
+- marker: `N63DEV`
 
-Integrated estimates:
-- long-address template: 549 P words
-- partial module: 713 P + 2 padding, excluding unresolved glue
-- addressing delta: 587 / 673.37 / 945 cycles min / mean / max
+BIN:
 
-## Timing
+`circuittracks-nor-defect-closure-development.bin`
 
-- reset-reachable tested max: 13,335 cycles/block
-- reachable max + boundary allowance: 13,347
-- derived upper: 13,379
-- conditional block budget used by research model: 163,840 cycles
+- 413952 bytes
+- SHA-256: `edf4f267030a6c5e8198213372086b89b4ccaaae74741e80ce7c241129a91cd9`
+- application: `0x08010000 .. 0x08075100`
 
-## Persistent-state blocker
+Phase61 and Phase62 are **FAILED / SUPERSEDED**.
 
-No qualified 7-word persistent X block was found in the bounded candidate study.
+## Current preflight status
 
-Reasons:
-- surviving stock writers
-- later consumers
-- SHI/service writes
-- shared scratch reuse
-- slot collision
-- unresolved foreign writer domains
+- Phase67 scoped model preflight: **PASS**
+- USB Storage joint path: **PASS**
+- operational preflight: **UNQUALIFIED**
+- post-READY allocation census: **UNQUALIFIED**
 
-Do not reopen a broad X-memory search.
+The operational result is intentionally stronger than the scoped Phase67 result.
 
-### Current fallback
+## Closed concrete defects
 
-Qualify seven mutable appended P words.
+The following concrete issues are considered closed in the current candidate:
 
-Preliminary calculated MOVEM traffic:
-- min 3,855 cycles/block
-- mean 4,168.23
-- max 5,185
+- reservation/publication bug;
+- SD/NOR geometry invalidation;
+- status ambiguity;
+- DMA lifetime / stack-buffer hazard;
+- late success overwriting failure/quarantine;
+- focused USB Storage / diagnostic concurrency defect.
 
-Not yet an integrated bound.
+The focused USB joint-path closure is **PASS**.
 
-## Firmware / recovery
+## Remaining software uncertainty
 
-- Exact SYX round-trip established.
-- No flash-ready modified firmware exists.
-- Community research supports application base at `0x08010000` with a separate bootloader.
-- Guaranteed USB-only recovery from a completely broken application is still not proven.
+The post-READY all-root allocation census cannot exhaustively bind every indirect or virtual callback target.
 
-**Flashing readiness: NO.**
+Known unresolved proof boundaries include indirect call sites around:
+
+- `0x0803C91C`
+- `0x0803C9C4`
+
+No post-READY allocation larger than the remaining modeled 8-byte heap gap has been proven.
+
+Its absence is also not proven.
+
+Allocator rejection reaches BKPT in the isolated model. Physical exception routing remains **UNKNOWN**.
+
+This is the primary accepted residual software uncertainty.
+
+## Recovery
+
+### PROVEN on physical unit
+
+- recovery/bootloader mode can be entered;
+- recovery mode can be exited by full power cycle;
+- B1.3 boots normally afterward;
+- no firmware was transmitted during the rehearsal.
+
+### NOT PROVEN
+
+- recovery-mode host enumeration;
+- uploader handshake in recovery;
+- actual recovery flashing of B1.3;
+- actual recovery flashing of stock 4486;
+- recovery from a non-booting diagnostic candidate;
+- guaranteed recovery.
+
+No concrete path to bootloader loss has been identified.
+
+The bootloader remains outside the modeled application erase/program range.
+
+Candidate-specific physical recovery is therefore **HARDWARE-ONLY UNKNOWN**.
+
+## User risk decision
+
+The user accepts the possibility of a soft brick and the possibility that recovery may be required.
+
+This does not change any UNKNOWN evidence into PROVEN evidence.
+
+## H4
+
+H4 remains **FAIL**.
+
+A failed raw-capture session is treated as non-retriable within that session.
+
+## Operational tools
+
+Host:
+
+- `live_host.py`
+- version `1.0.0-phase68-locked`
+- SHA-256 `9b8a7d3d088cdffe21257824cb16db602659d678d240e7266f468e92c3ae9dc9`
+- `live_enabled=false`
+
+Uploader:
+
+- `ct_uploader-final-offline-locked.html`
+- SHA-256 `bf1ef00dbca9c3715932235249fcc8ba0a71d6f2f989c047aa8caf66b85e17a5`
+- `PREFLIGHT_QUALIFIED=false`
+
+The locks are intentional.
+
+A separately reviewed operational release is required before hardware use.
+
+## Rollback artifacts
+
+B1.3:
+
+- SHA-256 `6f07376b5983a5e0350d4883ae9ed57a69bc735320afde9f43ca75017b8e8736`
+
+Stock 4486:
+
+- SHA-256 `bd2d294bafa88fdec7ae1f5fcaaa13158323969c5a40f83405a72e4ad329a0bd`
+
+The saved 4486 artifact is not independently authenticated against a fresh Novation-origin acquisition.
+
+## Plaits status
+
+Current long-term design:
+
+- four melodic Plaits tracks;
+- default mono;
+- `MAX_TRACKS_PER_MODEL = 2`;
+- `MAX_POLY_TRACKS = 2` globally;
+- engine-specific polyphony limits;
+- shared model code with independent per-track state.
+
+The current diagnostic candidate contains **no Plaits engine**.
+
+Authentic `$82000` coefficient data has not yet been captured.
+
+Therefore:
+
+- reclaim of `P:$0282-$0386` is not finally qualified;
+- final safe P/X/Y budget remains **UNKNOWN**;
+- full Plaits hardware integration remains blocked on diagnostic evidence.
+
+## Next step
+
+The next project step is a separately reviewed operational-release preparation followed by the controlled hardware test.
+
+Do not reopen a broad offline reverse-engineering phase unless new evidence justifies it.
 
 ## Hardware rule
 
 No opening, soldering, multimeter probing, JTAG/OnCE/SWD, or internal access.
 
-Future device interaction: normal external interfaces only.
-
-## Next gate
-
-P-backed state is qualified only if:
-1. runtime P writes are legal
-2. seven words persist across blocks
-3. no normal stock/service writer collides
-4. no execution/fetch path reaches them
-5. initialization is deterministic
-6. wrapper remains bit-exact
-7. cycle cost is bounded
-8. image placement is structurally valid
-
-After that: construct the first **offline executable patched DSP image** with dispatcher → Plaits → stock continuation.
+Normal external interfaces only.
