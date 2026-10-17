@@ -1,0 +1,11 @@
+CURRENT FROZEN REVIEW IDENTITY: unchanged Phase63, reviewed through Phase67.
+No Phase68 firmware generated. Exact copies included for a portable package.
+Candidate SYX: circuittracks-nor-defect-closure-development.syx
+569229 bytes; SHA256 9b420521a366c65c13fb871778fdbab612ca126cbb4ad60d0fd5bc12ecd253da
+Candidate BIN: circuittracks-nor-defect-closure-development.bin
+413952 bytes; SHA256 edf4f267030a6c5e8198213372086b89b4ccaaae74741e80ce7c241129a91cd9
+CRC-32/MPEG-2: 1BB21302; compared-header marker N63DEV
+Application base 08010000, exclusive end 08075100.
+Copies equal frozen Phase63 source; independent file-first SYX decode equals BIN.
+Phase61 and Phase62 are failed/superseded: DO NOT FLASH either.
+Current package: OPERATIONAL PREFLIGHT = UNQUALIFIED; NOT RELEASED.

@@ -1,3 +1,5 @@
+> Historical experiment scope, not the current global project stop point. [Current state](../../docs/CURRENT_STATUS.md).
+
 # Stock seam study — replay is not admitted
 
 Original-byte analysis only plus host numeric fixtures. No original stock CPU

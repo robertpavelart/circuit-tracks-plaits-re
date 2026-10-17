@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 20A — measured standalone VariableSaw resources
 
 ## Phase 20A-REGOPT update — smaller exact working frame (2026-10-07)
@@ -9,7 +11,7 @@ Do not call the full temporary footprint three words. Original+focused388096
 samples/states exact, baselines preserved. **CALCULATED / CONDITIONAL:** matched
 cycles6278/7270.1787mean/12390; focused/all peak12670,upper12682; structural23902.
 22.1511% matched mean reduction=STRONG. Actual device timing/stock margins
-remain **UNRESOLVED**. Report:[plaits-register-optimization.md](plaits-register-optimization.md).
+remain **UNRESOLVED**. Report:[plaits-register-optimization.md](<plaits-register-optimization.md>).
 
 ## Phase 20A-TIMING update — cycle estimate, unchanged resources (2026-10-06)
 
@@ -21,7 +23,7 @@ resident stack, noDMA/IRQs and family-to-device timing correspondence. Actual
 Circuit cycles/headroom remain **UNRESOLVED**. Detailed cost is not one clock
 per issued opcode:lab/lim, branches,REP and accumulator hazards are included.
 Native helper49 clocks observed,49..82 valid-domain, versus restoring mean222.5375
-under the same model. Sources and scope:[plaits-cycle-audit.md](plaits-cycle-audit.md).
+under the same model. Sources and scope:[plaits-cycle-audit.md](<plaits-cycle-audit.md>).
 No renderer modified/rerun; timing phase does not change the resource tables below.
 
 ## Phase 20A-DIV update — preferred standalone resources (2026-10-06)
@@ -33,7 +35,7 @@ mean5138.436303,max8956;43.2442% mean reduction.283,027 helper calls,
 33 issued opcodes each in this suite (33..48 for general admitted fixtures).
 All samples/states exactly equal restoring baseline. Hardware cycles/headroom
 remain **UNRESOLVED**; no stock allocation. Details and old/new table:
-[plaits-native-div.md](plaits-native-div.md). Original20A measurements below
+[plaits-native-div.md](<plaits-native-div.md>). Original20A measurements below
 remain the preserved restoring baseline.
 
 2026-10-06. **MEASURED / TESTED**, not a Circuit allocation or integration proof.

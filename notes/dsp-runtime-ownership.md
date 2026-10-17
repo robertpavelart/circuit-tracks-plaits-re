@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 6C — runtime ownership and host destination bounds
 
 ## Phase 19C-P204B — current count/table ownership gate (2026-10-06)
@@ -21,7 +23,7 @@ High-X and target-cell P204B exclusions stayNOT-YET-DETERMINED; no persistent
 allocation, target-bridge closure or positive checkpoint/replay.0 new CPU
 instructions; prior zero/calibration/helpers preserved. Asset branch frozen.
 21 repeat-identical reports and firmware/roundtrip/extract/core/prior guardsPASS.
-Details:[dsp-p204b-provenance.md](dsp-p204b-provenance.md). Next: targeted normal
+Details:[dsp-p204b-provenance.md](<dsp-p204b-provenance.md>). Next: targeted normal
 P19D count/table cursor-cache provenance, not generic ownership/alias archaeology.
 
 ## Phase 19C-ASSETBOUND — current asset ownership limit
@@ -36,12 +38,12 @@ These are conditional address alternatives, not actual normalX writes. Asset
 family NOT CLOSED, universal persistence NOT-YET-DETERMINED; service capability,
 other normal cache/order/ancestry,204B and DSP aliases remain separate.
 No memory allocation, target bridge promotion, parent replay or CPU execution.
-See[dsp-asset-loader-bounds.md](dsp-asset-loader-bounds.md).11 canonical files
+See[dsp-asset-loader-bounds.md](<dsp-asset-loader-bounds.md>).11 canonical files
 repeat identically;9 arithmetic tests/overwrite refusal/all protection checks pass.
 
 ## Phase 19C-HOSTWRITE — cache provenance and transaction domains
 
-2026-10-06. [dsp-host-write-provenance.md](dsp-host-write-provenance.md)
+2026-10-06. [dsp-host-write-provenance.md](<dsp-host-write-provenance.md>)
 supersedes the cache-initialization uncertainty: original ARM descriptor5B7C4
 expands2582 bytes from805C3C4 to15618 initialized RAM bytes ending20003D02;
 cache20003D00 isFFFF. No boot execution/seeding. Protocol direct X10 writers
@@ -60,7 +62,7 @@ advance49C34→51B80→49A6A across64 assets, including page truncation/padding.
 
 ## Phase 19C-TARGETBRIDGE — requested control-word ownership
 
-2026-10-06. [dsp-effect-target-bridge.md](dsp-effect-target-bridge.md) narrows
+2026-10-06. [dsp-effect-target-bridge.md](<dsp-effect-target-bridge.md>) narrows
 the audit to X95A..95F, X[9DB,A12) and descriptor+0 cells. **VERIFIED recovered
 normal-family exclusion:** Phase9 bank0/1 parameter maximumX959; exact special
 destinations/known scalar suffixes, mailbox staging/backup/workspace and selected
@@ -79,7 +81,7 @@ replay, hardware, allocation, firmware change or Plaits implementation.
 
 ## Phase 11 update — 2026-10-06
 
-Current report: [host-utility-269e4.md](host-utility-269e4.md), evidence
+Current report: [host-utility-269e4.md](<host-utility-269e4.md>), evidence
 `builds/phase11/replay/`. **VERIFIED recovered host utility classification:**
 service request5E, validated framed prefix/63/70 via2484C.1F290 branches
 1F308/30A before the separate flag guard. No Selection1 transition is required.
@@ -105,7 +107,7 @@ No persistent allocation follows. Next: close those effect pointer invariants.
 
 ## Phase 10 update — 2026-10-06
 
-[dsp-high-x-audit.md](dsp-high-x-audit.md) supersedes the earlier high-X next
+[dsp-high-x-audit.md](<dsp-high-x-audit.md>) supersedes the earlier high-X next
 steps and table/DMA-space assumptions. Canonical evidence: `builds/phase10/replay/`.
 **UNRESOLVED:** X:[5F00,6000) availability/persistence; no verified subrange.
 
@@ -133,7 +135,7 @@ from no literal5F00 reference. Single next step: close the branch into ARM1F30A.
 
 ## Phase 9 update — 2026-10-06
 
-See [bank-selector-domain.md](bank-selector-domain.md) and canonical
+See [bank-selector-domain.md](<bank-selector-domain.md>) and canonical
 builds/phase9/verified/. **VERIFIED recovered normal callback boundary:**bank0/1.
 2148C resets20006800 from explicit0/1 callers before callbacks;213D4 separately
 sets bank0/1 and slot0..11. Event wrappers and normal service hold the same
@@ -164,7 +166,7 @@ DSP table-pointer jobs (X:1B16;P:1E15→X:1D3A/1D3B).
 ## Phase 8 update — 2026-10-06
 
 Current allocation results and the complete report are in
-[plaits-poc-memory.md](plaits-poc-memory.md). Phase6C findings below remain
+[plaits-poc-memory.md](<plaits-poc-memory.md>). Phase6C findings below remain
 historical evidence; the new audit supersedes its bank-writer next step.
 
 **VERIFIED:**20006800 boots0 through scatter clear[20003D04,20006A54)

@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 14 — normal X:35F zero invariant
 
 ## Phase 19C-P204B — current invariant status (2026-10-06)
@@ -23,7 +25,7 @@ remain unresolved, service26AD4 separate. Previous initialized1F97 exclusions
 are conditional, not a global foreign-cursor preservation proof. Other inherited
 indirect/worker/context obligations remain; no family removed universally.
 
-See[dsp-p204b-provenance.md](dsp-p204b-provenance.md), canonical
+See[dsp-p204b-provenance.md](<dsp-p204b-provenance.md>), canonical
 builds/phase19c-p204b/final-v4/, checks-v4/:21 identical reports; five fields,
 20 smoothing domains,46 collision/scope checks,19 inherited reader edges,
 original firmware/roundtrip/extract/core/prior evidence guardsPASS.
@@ -43,7 +45,7 @@ and sealed-core checks.0 original DSP instructions this phase. Empty watch
 events are explicitly NOT EXECUTED, not a zero-count/non-interference trace.
 Previous full-helper no35F access remains only BOUNDED-PROOF. Candidate D99
 predecessor carries active LF1, unlike its tested LF0 class. See
-[dsp-parent-replay.md](dsp-parent-replay.md). No alias family is removed from
+[dsp-parent-replay.md](<dsp-parent-replay.md>). No alias family is removed from
 the universal blocker set, and no positive producer was invented.
 
 ## Phase 18 — minimal offline replay specified, not implemented
@@ -61,9 +63,9 @@ material worker behavior and actual normal reachability of parent1E15→1F5C.
 Do not invent a full startup checkpoint or a mandatory1F97 scheduler stage.
 Separate conditional unit fixtures from integrated normal stock scenarios.
 
-See [dsp-emulator-spec.md](dsp-emulator-spec.md),
-[dsp-replay-scenarios.md](dsp-replay-scenarios.md),
-[dsp-emulator-validation.md](dsp-emulator-validation.md), and builds/phase18/final/.
+See [dsp-emulator-spec.md](<dsp-emulator-spec.md>),
+[dsp-replay-scenarios.md](<dsp-replay-scenarios.md>),
+[dsp-emulator-validation.md](<dsp-emulator-validation.md>), and builds/phase18/final/.
 **Next:** Phase19A core/memory/every-write tracing plus ISA/AGU/loop/IRQ coverage
 tests only after explicit implementation instruction. Planned19B startup,
 19C targeted scheduler/models,20 validated stock replay; gates may add work.
@@ -92,8 +94,8 @@ cannot close internal-write exclusions. Keephardware disconnected and5E rejected
 X35F invariant/normalhigh-X availability stay **NOT-YET-DETERMINED**; service
 robustness stays **NO**. No allocation or Plaits work.
 
-See [dsp-debug-observation.md](dsp-debug-observation.md),
-[board-debug-access.md](board-debug-access.md) and `builds/phase17/final/` for
+See [dsp-debug-observation.md](<dsp-debug-observation.md>),
+[board-debug-access.md](<board-debug-access.md>) and `builds/phase17/final/` for
 citations/matrices/source witnesses. **Next:** static emulator coverage/readiness
 specification for minimal1F97/203A replay; no broad alias census or live debug.
 This supersedes historical next-step suggestions below without changing their
@@ -113,7 +115,7 @@ ARM29344/292F8 address-cache interaction could redirect a subsequent cached
 normal write; actual interleaving remains **UNRESOLVED**, not an observed bug.
 Synchronous SPI/completion polling and DSP ISR preemption preclude a claim of
 glitch-free operation. External physical ingress and global side effects remain
-**UNRESOLVED**. See [dsp-readonly-observation.md](dsp-readonly-observation.md),
+**UNRESOLVED**. See [dsp-readonly-observation.md](<dsp-readonly-observation.md>),
 offline audit `tools/ct_readonly_observation_audit.py`, `builds/phase16/final/`.
 
 X:35F invariant and high-X normal availability remain **NOT-YET-DETERMINED**;
@@ -126,7 +128,7 @@ as a nonhalting, state-free alternative.
 
 ## Phase 15 update — local cursor bounds, global preservation still open
 
-See [dsp-p1f97-cursors.md](dsp-p1f97-cursors.md), `builds/phase15/verified/`.
+See [dsp-p1f97-cursors.md](<dsp-p1f97-cursors.md>), `builds/phase15/verified/`.
 **VERIFIED conditional reach:** A[2CCC,2D0C); B[2C02,2C22) plus[2C24,2C44).
 1F97 reloads its Y-held cursor every outer iteration and never writes back the
 advanced pointer. Local stored-cursor delta0; reviewed state/coefficient writes

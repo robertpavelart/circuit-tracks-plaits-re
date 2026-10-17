@@ -1,0 +1,15 @@
+> Saved phase-scoped evidence; original next-step instructions are historical. [Current project state](../../CURRENT_STATUS.md).
+
+# Final stop-rule assessment
+
+**PROVEN — category B, new peripheral-model gap:** native `080381C8` calls `08048316` with R0=`$40040000`. Instruction `ldr r1,[r0,#8]` attempts `$40040008`; the inherited emulator maps peripheral memory only at `40000000..4002FFFF`. Unicorn reports READ_UNMAPPED before the subsequent write. Code then clears bit0 and stores the value back. Listings: candidate-080381be.asm (local-only reference: `builds/phase65-shi-model-closure/candidate-080381be.asm`; not distributed), candidate-080482d0.asm (local-only reference: `builds/phase65-shi-model-closure/candidate-080482d0.asm`; not distributed); map source: [Phase42 Physical.__init__](<../../../builds/phase42-exact-rdiag-integration/environment.py>).
+
+**PROVEN vendor identification:** this is USB OTG HS `GAHBCFG` at base40040000+8, the global AHB configuration register. The bit0 operation disables global USB interrupts. Source: [ST STM32F745 device definitions](https://raw.githubusercontent.com/STMicroelectronics/cmsis-device-f7/master/Include/stm32f745xx.h), USB_OTG_HS_PERIPH_BASE, USB_OTG_GlobalTypeDef.GAHBCFG and USB_OTG_GAHBCFG_GINT. It is unrelated to SHI word framing and is not an invalid firmware pointer into absent physical hardware.
+
+**PROVEN narrow safety effect:** the failed instruction is a peripheral read. It has not written bootloader flash, NOR, the geometry record, or a raw buffer. No raw buffer is active and no authorization was accepted in this continuous prefix. This stop demonstrates missing emulator coverage, not a concrete firmware corruption path. The Phase63 image and its already passed install/rollback/reservation/status/DMA/host suites are unchanged.
+
+**STRONG INFERENCE:** controller register/reset/endpoint/FIFO/IRQ progress is needed to continue real USB initialization and configure a host link. Mapping zeroes or forcing a ready/configured field would not qualify that sequence. No such shortcut was added.
+
+**UNKNOWN, safety-relevance limit:** the USB controller as a whole is not declared irrelevant. It ultimately supplies diagnostic input and transmission/completion events; its buffers and lifetime interact with transport and authorization. The exact failed read is not a corruption operation, but this phase cannot exclude every later USB-buffer/allocator interaction merely from its absence. Separate scoped parser/host/DMA tests remain useful and preserved. No new concrete bootloader/NOR/authorization/rollback defect is demonstrated.
+
+**Stop rule applied:** no general USB peripheral model, enumeration research, endpoint simulation or new peripheral phase was started. The residual gap is **MODEL COVERAGE LIMITATION / HARDWARE-ONLY UNKNOWN** for physical USB operation; the continuous offline path and allocation enumeration are also explicitly incomplete. Calling physical behavior hardware-only does not convert an unexecuted offline safety assertion into PROVEN. With the mandatory continuous gates unexecuted, the final result remains UNQUALIFIED.

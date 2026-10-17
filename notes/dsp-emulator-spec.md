@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 18 — minimal offline stock DSP replay specification
 
 ## Phase 19A — offline substrate implemented and fixture-tested
@@ -9,8 +11,8 @@ independent builds with byte-identical traces. No Circuit image/startup or
 modified firmware execution. Exact source overlays reproduce; vendor/original
 and extraction hashes unchanged. Source/site guard rejects an added store file.
 
-See [dsp-emulator-phase19a.md](dsp-emulator-phase19a.md),
-[dsp-emulator-write-paths.md](dsp-emulator-write-paths.md) and
+See [dsp-emulator-phase19a.md](<dsp-emulator-phase19a.md>),
+[dsp-emulator-write-paths.md](<dsp-emulator-write-paths.md>) and
 builds/phase19a/reproducibility-final.json. Passed gates cover the supported fixture
 configuration, not all chip/ISA/peripheral behavior. JIT remains disabled;
 unknown-state, stock map/OMR/host tables, worker/ICC and timing are unresolved.
@@ -310,8 +312,8 @@ STOP on uncertaindecode/AGU/loop,hookbypass,uninitialized/unmapped access,
 unsupportedperipheral/DMA,missingworkerdata,schedulerdivergence,nondeterminism,
 logoverflow or materiallyunresolvedworkerbehavior. Modifiedfirmware remains
 out of scope regardless of clean finite traces. More details in
-[dsp-replay-scenarios.md](dsp-replay-scenarios.md) and
-[dsp-emulator-validation.md](dsp-emulator-validation.md).
+[dsp-replay-scenarios.md](<dsp-replay-scenarios.md>) and
+[dsp-emulator-validation.md](<dsp-emulator-validation.md>).
 
 **Single best next step:** Phase19A only after explicit implementation instruction.
 No allocation or stockinvariant upgrade follows this design.

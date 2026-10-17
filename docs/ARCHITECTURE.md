@@ -9,17 +9,29 @@ The previous single selected stock-synth / VariableSaw interception design was a
 Current high-level goal:
 
 ```text
+
 Circuit sequencing / track workflow
+
         ↓
+
 four melodic track front ends
+
         ↓
+
 Plaits-derived engine selection
+
         ↓
+
 shared model code
+
         ↓
+
 independent per-track state
+
         ↓
+
 existing Circuit mixing / effects / output path where feasible
+
 ```
 
 ## Track policy
@@ -27,10 +39,15 @@ existing Circuit mixing / effects / output path where feasible
 Current planning constraints:
 
 - four melodic Plaits tracks;
+
 - default mono;
+
 - `MAX_TRACKS_PER_MODEL = 2`;
+
 - `MAX_POLY_TRACKS = 2` globally;
+
 - model-specific polyphony limits;
+
 - shared model implementation with independent state per track.
 
 These are architecture constraints, not yet a final hardware-qualified performance guarantee.
@@ -56,7 +73,9 @@ Authentic `$82000` coefficient data has not yet been captured.
 Until it is:
 
 - reclaim of `P:$0282-$0386` is not finally qualified;
+
 - the safe final P/X/Y budget remains **UNKNOWN**;
+
 - the final placement strategy for all Plaits resources remains open.
 
 ## Audio/DSP constraints already established
@@ -64,9 +83,13 @@ Until it is:
 Research to date establishes several important constraints:
 
 - Circuit audio processing uses 32-frame blocks;
+
 - Plaits voice rendering naturally uses 12-sample blocks;
+
 - an exact 12→32 FIFO wrapper has been demonstrated in offline work;
+
 - CPU budget is a primary limiting resource;
+
 - some Plaits engines have additional state/resource costs that must be accounted for separately.
 
 The final architecture must respect real hardware timing, not only offline model feasibility.
@@ -76,10 +99,15 @@ The final architecture must respect real hardware timing, not only offline model
 Where feasible, retain:
 
 - Circuit sequencing workflow;
+
 - drums;
+
 - mixer;
+
 - effects;
+
 - project behavior;
+
 - rollback path.
 
 Exact retention boundaries remain implementation-dependent.
@@ -91,3 +119,5 @@ Earlier work explored a conditional interception around stock DSP flow, replacin
 That design remains useful historical evidence, but it is **not** the current project target.
 
 See `docs/STATUS.md` and `docs/ROADMAP.md` for the active state.
+
+Current detailed authority: [CURRENT_STATUS.md](CURRENT_STATUS.md).

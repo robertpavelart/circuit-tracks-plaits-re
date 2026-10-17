@@ -1,3 +1,5 @@
+> Historical experiment scope, not the current global project stop point. [Current state](../../../docs/CURRENT_STATUS.md).
+
 # Exact standalone VariableSaw REGOPT
 
 Offline synthetic program only. MIT notices remain in ../LICENSE; sealed core,

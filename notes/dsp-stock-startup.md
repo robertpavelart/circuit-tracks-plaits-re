@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19B — original stock startup audit
 
 2026-10-06. **VERIFIED load-only; stock instructions executed: 0.** Entry P:0

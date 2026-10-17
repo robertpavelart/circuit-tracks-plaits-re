@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase20B3 — original P:657 input record
 
 2026-10-07. Overall **PARTIAL**; numerical preparation and seam replay

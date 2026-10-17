@@ -1,8 +1,10 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19C-FULLHELPER: joined original helper replay
 
 ## Phase 19C-PARENT — latest qualification result
 
-2026-10-06. See [dsp-parent-replay.md](dsp-parent-replay.md).
+2026-10-06. See [dsp-parent-replay.md](<dsp-parent-replay.md>).
 **VERIFIED:** parent P[1E15,1F11), four JSR sites and ten DOs mapped. No
 decoded external direct entry; initialized valid effect targets and descriptors
 exclude1E15. Actual normal target/stack/cursor/count preservation stays

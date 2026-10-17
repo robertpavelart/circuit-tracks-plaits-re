@@ -1,0 +1,50 @@
+HOST TOOL FREEZE
+Filename: live_host.py
+Version: 1.0.0-phase68-locked
+SHA256: 9b8a7d3d088cdffe21257824cb16db602659d678d240e7266f468e92c3ae9dc9
+Dependencies (all SHA-bound in HASHES.txt): protocol_codec.py, geometry_codec.py,
+status_protocol.py, ctremote_transport.py, operational-gate.json.
+Runtime: Windows WinMM for future live use; Python 3.10+ with standard library.
+Mock mode verified using Python 3.14.6 64-bit. No pip MIDI module.
+Static audit scripts separately require Capstone; not a live-host dependency.
+
+LOCK: operational-gate.json live_enabled=false. CLI list/geometry/capture all stop
+BEFORE importing/enumerating transport. No CLI unlock switch. Do not edit gate
+without explicit decision, closed gates and separately reviewed release identity.
+Dry run: python -B live_host.py mock (fake frames/clock/files only).
+32 final mock cases pass; ctremote transport not imported by those tests.
+
+Port selection: case-insensitive substring from --port (default Circuit), exactly
+one matching input and one output or reject before send. Transport Link repeats
+same uniqueness check when opening. Not USB VID/PID/serial authentication.
+Operator must identify intended Circuit Tracks; ambiguous names stop.
+
+Protocol freeze: N63DEV / 0E geometry query, 0F same-epoch authorization; F0 7D 43 54.
+Requests padded to232 bytes; 4E geometry39B; 4F status39B with CRC; 4D ordered raw
+chunks and exactly one CRC completion. Epoch must1, session1..127, exact geometry,
+mask2 coefficients or separately approved mask3 identity+coefficients.
+Eight64B coefficient chunks exactly82000..821FF; optional identity23B at81000.
+No arbitrary addresses/lengths. AUTHORIZED precedes raw; SUCCESS follows completion.
+
+Monotonic clock: preparation10s, geometry10s absolute stage, authorization send
+elapsed bound2s, raw10s absolute stage including quiet/end-of-stream observation.
+Human approval occurs before authorization and before the raw deadline starts;
+geometry changes during that wait must be rejected by native epoch/lifecycle gate.
+No deadline extension per chunk; premature timeout/trailing partial/duplicate fails.
+
+Durable one-shot: exclusively create HARDWARE-ATTEMPT.json, flush+fsync BEFORE first
+send attempt. Every post-send outcome retains it, including NOT_READY. Existing
+marker blocks before port inventory. No automatic retry or cleanup/storage command.
+No tool can prove a physical power cycle: marker archival/rearm is operator policy,
+not an automatic action. A copied package/new process is not a power-cycle proof.
+
+Capture command performs geometry-only first, validates mapping, then requires
+explicit same-process approval before sending authorization. Standalone geometry
+mode stops and retains marker; it cannot be resumed by a second capture command.
+
+Atomic publication: reconstruct in memory; validate all addresses/indices/counts,
+CRCs, completion and SUCCESS through full EOS deadline; write staging directory,
+then single directory rename. No accepted final BIN after failed/incomplete capture.
+Accepted filename qspi_00082000_000821ff.bin. Partial staging is not accepted evidence.
+Post-send failure: CAPTURE FAILED / DO NOT RETRY / POWER-CYCLE DEVICE BEFORE ANOTHER
+ATTEMPT. No second request. No real WinMM/USB timing tested; tool remains LOCKED.

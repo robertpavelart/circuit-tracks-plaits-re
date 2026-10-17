@@ -1,3 +1,5 @@
+> Historical experiment scope, not the current global project stop point. [Current state](../../../docs/CURRENT_STATUS.md).
+
 # Offline legal timing domain
 
 Analysis-only layer over the unchanged 442P REGOPT standalone renderer. No new

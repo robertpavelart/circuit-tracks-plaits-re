@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Next reverse-engineering work
 
 ## Current Phase20C6-ARCHSELECT — 2026-10-07
@@ -462,7 +464,7 @@ historical and superseded by the scoped PACKLINK gate.
 - [ ] No hardware action, firmware archaeology expansion or parent replay is
   authorized by dataset discovery. Parent replayNO; target bridge unchanged.
 
-See[dsp-asset-offline-data.md](dsp-asset-offline-data.md), canonical
+See[dsp-asset-offline-data.md](<dsp-asset-offline-data.md>), canonical
 builds/phase19c-assetdata/final/,checks/. Earlier blanket data stops are superseded.
 
 ## Phase 19C-BACKENDBOUND — current data stop (2026-10-06)
@@ -491,7 +493,7 @@ builds/phase19c-assetdata/final/,checks/. Earlier blanket data stops are superse
 - [ ] Keep host cache/order/entry ancestry,204B and DSP aliases independent;
   asset mutation family NOT CLOSED, bridge unchanged and parent replayNO.
 
-See[dsp-asset-backend-bounds.md](dsp-asset-backend-bounds.md), canonical
+See[dsp-asset-backend-bounds.md](<dsp-asset-backend-bounds.md>), canonical
 builds/phase19c-backendbound/final-v3/. Earlier frontiers below are historical.
 
 ## Phase 19C-ASSETBOUND — current frontier (2026-10-06)
@@ -516,7 +518,7 @@ builds/phase19c-backendbound/final-v3/. Earlier frontiers below are historical.
 - [ ] Keep other host cache/order/transition ancestry,204B and DSP indirect
   writers independent; no broad census, target seeding or replay-gate promotion.
 
-See[dsp-asset-loader-bounds.md](dsp-asset-loader-bounds.md), canonical
+See[dsp-asset-loader-bounds.md](<dsp-asset-loader-bounds.md>), canonical
 builds/phase19c-assetbound/final-v2/. Earlier frontier sections remain history.
 
 ## Phase 19C-HOSTWRITE — current frontier (2026-10-06)
@@ -543,7 +545,7 @@ builds/phase19c-assetbound/final-v2/. Earlier frontier sections remain history.
 - [ ] Preserve204B and other DSP indirect mutations separately; do not
   re-open their analysis automatically or admit active-parent replay.
 
-See [dsp-host-write-provenance.md](dsp-host-write-provenance.md). No broad
+See [dsp-host-write-provenance.md](<dsp-host-write-provenance.md>). No broad
 alias/ROM/scheduler investigation, target seeding, firmware edits, hardware,
 SysEx/MIDI or Plaits implementation. Canonical builds/phase19c-hostwrite/final-v3/.
 
@@ -573,7 +575,7 @@ SysEx/MIDI or Plaits implementation. Canonical builds/phase19c-hostwrite/final-v
 
 No broad alias/ROM/scheduler or whole-descriptor investigation automatically
 follows. No hardware, packets, firmware modifications, allocation or Plaits.
-See [dsp-effect-target-bridge.md](dsp-effect-target-bridge.md) and canonical
+See [dsp-effect-target-bridge.md](<dsp-effect-target-bridge.md>) and canonical
 builds/phase19c-targetbridge/final-v2/, checks-v2/.
 
 ## Phase 19C-PARENT — current frontier (2026-10-06)
@@ -603,7 +605,7 @@ builds/phase19c-targetbridge/final-v2/, checks-v2/.
 X35F/high-X normal safety remains NOT-YET-DETERMINED; verified persistent
 Plaits layout NO; firmware implementation NO. Authentic boot remains unresolved
 independently. No hardware, firmware modification, broad ROM/alias archaeology
-or automatic full scheduler replay. See [dsp-parent-replay.md](dsp-parent-replay.md).
+or automatic full scheduler replay. See [dsp-parent-replay.md](<dsp-parent-replay.md>).
 
 Safety: offline synthetic execution and immutable stock loading are now permitted;
 stock execution remains gated by justified handoff/peripheral state. Preserve originals; no hardware communication,

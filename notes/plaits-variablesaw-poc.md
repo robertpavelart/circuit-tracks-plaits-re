@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 20A — standalone DSP56300 VariableSaw proof of concept
 
 ## Phase 20A-DIV update — preferred standalone variant (2026-10-06)
@@ -7,7 +9,7 @@ in a separate standalone variant; restoring source/evidence remain unchanged.
 700P,7 persistent,44 allocated scratch,32 output,0LUT; issued mean5138.4363
 (43.2442% lower). Same43-case suite passes twice, exact old/oracle samples and
 seven-word block states. Pitch/reference/continuity metrics are unchanged.
-Report:[plaits-native-div.md](plaits-native-div.md); canonical evidence under
+Report:[plaits-native-div.md](<plaits-native-div.md>); canonical evidence under
 builds/phase20a-div/final-compact/, fixtures-compact/, checks/, comparison/.
 Circuit integration/ownership/timing remain **UNRESOLVED**. Historical baseline
 report below retains its original708P/restoring measurements.

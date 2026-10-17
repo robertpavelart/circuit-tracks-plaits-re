@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase20B6 — acquisition design, no acquisition
 
 ## Current Phase20C disposition — snapshot branch DEFERRED

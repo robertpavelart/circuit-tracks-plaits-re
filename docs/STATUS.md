@@ -15,8 +15,11 @@ No hardware installation of the current diagnostic candidate has occurred.
 `circuittracks-nor-defect-closure-development.syx`
 
 - 569229 bytes
+
 - SHA-256: `9b420521a366c65c13fb871778fdbab612ca126cbb4ad60d0fd5bc12ecd253da`
+
 - CRC-32/MPEG-2: `1BB21302`
+
 - marker: `N63DEV`
 
 BIN:
@@ -24,7 +27,9 @@ BIN:
 `circuittracks-nor-defect-closure-development.bin`
 
 - 413952 bytes
+
 - SHA-256: `edf4f267030a6c5e8198213372086b89b4ccaaae74741e80ce7c241129a91cd9`
+
 - application: `0x08010000 .. 0x08075100`
 
 Phase61 and Phase62 are **FAILED / SUPERSEDED**.
@@ -32,8 +37,11 @@ Phase61 and Phase62 are **FAILED / SUPERSEDED**.
 ## Current preflight status
 
 - Phase67 scoped model preflight: **PASS**
+
 - USB Storage joint path: **PASS**
+
 - operational preflight: **UNQUALIFIED**
+
 - post-READY allocation census: **UNQUALIFIED**
 
 The operational result is intentionally stronger than the scoped Phase67 result.
@@ -43,10 +51,15 @@ The operational result is intentionally stronger than the scoped Phase67 result.
 The following concrete issues are considered closed in the current candidate:
 
 - reservation/publication bug;
+
 - SD/NOR geometry invalidation;
+
 - status ambiguity;
+
 - DMA lifetime / stack-buffer hazard;
+
 - late success overwriting failure/quarantine;
+
 - focused USB Storage / diagnostic concurrency defect.
 
 The focused USB joint-path closure is **PASS**.
@@ -58,6 +71,7 @@ The post-READY all-root allocation census cannot exhaustively bind every indirec
 Known unresolved proof boundaries include indirect call sites around:
 
 - `0x0803C91C`
+
 - `0x0803C9C4`
 
 No post-READY allocation larger than the remaining modeled 8-byte heap gap has been proven.
@@ -73,17 +87,25 @@ This is the primary accepted residual software uncertainty.
 ### PROVEN on physical unit
 
 - recovery/bootloader mode can be entered;
+
 - recovery mode can be exited by full power cycle;
+
 - B1.3 boots normally afterward;
+
 - no firmware was transmitted during the rehearsal.
 
 ### NOT PROVEN
 
 - recovery-mode host enumeration;
+
 - uploader handshake in recovery;
+
 - actual recovery flashing of B1.3;
+
 - actual recovery flashing of stock 4486;
+
 - recovery from a non-booting diagnostic candidate;
+
 - guaranteed recovery.
 
 No concrete path to bootloader loss has been identified.
@@ -109,14 +131,19 @@ A failed raw-capture session is treated as non-retriable within that session.
 Host:
 
 - `live_host.py`
+
 - version `1.0.0-phase68-locked`
+
 - SHA-256 `9b8a7d3d088cdffe21257824cb16db602659d678d240e7266f468e92c3ae9dc9`
+
 - `live_enabled=false`
 
 Uploader:
 
 - `ct_uploader-final-offline-locked.html`
+
 - SHA-256 `bf1ef00dbca9c3715932235249fcc8ba0a71d6f2f989c047aa8caf66b85e17a5`
+
 - `PREFLIGHT_QUALIFIED=false`
 
 The locks are intentional.
@@ -140,10 +167,15 @@ The saved 4486 artifact is not independently authenticated against a fresh Novat
 Current long-term design:
 
 - four melodic Plaits tracks;
+
 - default mono;
+
 - `MAX_TRACKS_PER_MODEL = 2`;
+
 - `MAX_POLY_TRACKS = 2` globally;
+
 - engine-specific polyphony limits;
+
 - shared model code with independent per-track state.
 
 The current diagnostic candidate contains **no Plaits engine**.
@@ -153,7 +185,9 @@ Authentic `$82000` coefficient data has not yet been captured.
 Therefore:
 
 - reclaim of `P:$0282-$0386` is not finally qualified;
+
 - final safe P/X/Y budget remains **UNKNOWN**;
+
 - full Plaits hardware integration remains blocked on diagnostic evidence.
 
 ## Next step
@@ -167,3 +201,5 @@ Do not reopen a broad offline reverse-engineering phase unless new evidence just
 No opening, soldering, multimeter probing, JTAG/OnCE/SWD, or internal access.
 
 Normal external interfaces only.
+
+Current detailed authority: [CURRENT_STATUS.md](CURRENT_STATUS.md).

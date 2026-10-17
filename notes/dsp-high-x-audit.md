@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 10 — channel-zero X:[5F00,6000) after-init audit
 
 ## Phase 19C-P204B — independent writer remains open (2026-10-06)
@@ -17,7 +19,7 @@ No normal high-X collision witness, and no universal exclusion. **P204B is not
 removed as a high-X blocker.** Service robustnessNO; verified256-word allocation
 NO; no sentinels, firmware edits, hardware or Plaits work.
 
-Current report:[dsp-p204b-provenance.md](dsp-p204b-provenance.md).21 reproducible
+Current report:[dsp-p204b-provenance.md](<dsp-p204b-provenance.md>).21 reproducible
 reports/focused tests and original/extract/core/prior guardsPASS;0 CPU instructions.
 Assets frozen. Next: target normalP19D count/table effective endpoint provenance,
 not a new high-X/whole-write census. Previous conditional exclusions remain.
@@ -32,7 +34,7 @@ unclosed. A candidate effect-chain call inherits D99 LF1/LA=DAF/LC1..5, outside
 the previous LF0 bounded proof. Local pointer publications and prior conditional
 low-buffer bounds are retained, not promoted to ownership.13 reproducible static
 exports/7 tests/2 refusals pass;0 DSP instructions. See
-[dsp-parent-replay.md](dsp-parent-replay.md) and builds/phase19c-parent/final-v3/.
+[dsp-parent-replay.md](<dsp-parent-replay.md>) and builds/phase19c-parent/final-v3/.
 Normal safety NOT-YET-DETERMINED; service robustness NO; verified256-word
 reservation NO; implementation readiness NO. Next: targeted normal effect
 selector/table producer and preservation proof, not another alias/ROM census.
@@ -52,9 +54,9 @@ material worker behavior and actual normal reachability of parent1E15→1F5C.
 Do not invent a full startup checkpoint or a mandatory1F97 scheduler stage.
 Separate conditional unit fixtures from integrated normal stock scenarios.
 
-See [dsp-emulator-spec.md](dsp-emulator-spec.md),
-[dsp-replay-scenarios.md](dsp-replay-scenarios.md),
-[dsp-emulator-validation.md](dsp-emulator-validation.md), and builds/phase18/final/.
+See [dsp-emulator-spec.md](<dsp-emulator-spec.md>),
+[dsp-replay-scenarios.md](<dsp-replay-scenarios.md>),
+[dsp-emulator-validation.md](<dsp-emulator-validation.md>), and builds/phase18/final/.
 **Next:** Phase19A core/memory/every-write tracing plus ISA/AGU/loop/IRQ coverage
 tests only after explicit implementation instruction. Planned19B startup,
 19C targeted scheduler/models,20 validated stock replay; gates may add work.
@@ -83,8 +85,8 @@ cannot close internal-write exclusions. Keephardware disconnected and5E rejected
 X35F invariant/normalhigh-X availability stay **NOT-YET-DETERMINED**; service
 robustness stays **NO**. No allocation or Plaits work.
 
-See [dsp-debug-observation.md](dsp-debug-observation.md),
-[board-debug-access.md](board-debug-access.md) and `builds/phase17/final/` for
+See [dsp-debug-observation.md](<dsp-debug-observation.md>),
+[board-debug-access.md](<board-debug-access.md>) and `builds/phase17/final/` for
 citations/matrices/source witnesses. **Next:** static emulator coverage/readiness
 specification for minimal1F97/203A replay; no broad alias census or live debug.
 This supersedes historical next-step suggestions below without changing their
@@ -104,7 +106,7 @@ ARM29344/292F8 address-cache interaction could redirect a subsequent cached
 normal write; actual interleaving remains **UNRESOLVED**, not an observed bug.
 Synchronous SPI/completion polling and DSP ISR preemption preclude a claim of
 glitch-free operation. External physical ingress and global side effects remain
-**UNRESOLVED**. See [dsp-readonly-observation.md](dsp-readonly-observation.md),
+**UNRESOLVED**. See [dsp-readonly-observation.md](<dsp-readonly-observation.md>),
 offline audit `tools/ct_readonly_observation_audit.py`, `builds/phase16/final/`.
 
 X:35F invariant and high-X normal availability remain **NOT-YET-DETERMINED**;
@@ -117,7 +119,7 @@ as a nonhalting, state-free alternative.
 
 ## Phase 15 update — no allocation upgrade
 
-[dsp-p1f97-cursors.md](dsp-p1f97-cursors.md), evidence `builds/phase15/verified/`.
+[dsp-p1f97-cursors.md](<dsp-p1f97-cursors.md>), evidence `builds/phase15/verified/`.
 The initialized1F97 family reaches A[2CCC,2D0C) or B[2C02,2C22)+[2C24,2C44)
 under stock32/recognized modes, without pointer drift across blocks. Its local
 Y writes preserve the pointer cells. This is **VERIFIED conditional exclusion**,
@@ -134,7 +136,7 @@ available and hardware use later authorized. No hardware/patch/debug action.
 
 ## Phase 14 update — candidate gate unchanged
 
-[dsp-x35f-invariant.md](dsp-x35f-invariant.md), `builds/phase14/current/`.
+[dsp-x35f-invariant.md](<dsp-x35f-invariant.md>), `builds/phase14/current/`.
 X35F zero invariant **NOT-YET-DETERMINED**; no normal nonzero witness.
 204B cannot be its first violator under recovered202B entry/zero-skip mode,
 but normal foreign writers remain unclosed. Candidate was **not re-evaluated**
@@ -149,7 +151,7 @@ under stock32/linearM7. Other census/context/transition obligations remain.
 
 ## Phase 13 update — zero-count consumer, preservation still open
 
-[dsp-indirect-write-204b.md](dsp-indirect-write-204b.md) and
+[dsp-indirect-write-204b.md](<dsp-indirect-write-204b.md>) and
 `builds/phase13/final/` supersede the earlier unspecified204B count reasoning.
 **VERIFIED:**204B writes one absolute X word per five-word record, with no R4
 postincrement. ARM286E4 sends **zero** to35F+172*bank, while286DA sends the
@@ -167,7 +169,7 @@ X35F preservation through the already-open normal indirect writers. No port.
 
 ## Phase 12 update — independent safety axes
 
-Current report: [dsp-effect-memory.md](dsp-effect-memory.md), evidence
+Current report: [dsp-effect-memory.md](<dsp-effect-memory.md>), evidence
 `builds/phase12/final/`, reusable `tools/ct_effect_memory_audit.py`.
 **NORMAL-RUNTIME SAFE: NOT-YET-DETERMINED. SERVICE-ROBUST: NO.** Service5E
 is no longer counted as a normal allocation blocker. No normal occupancy
@@ -200,7 +202,7 @@ service-mitigation options are documented conceptually; none implemented.
 
 ## Phase 11 update — 2026-10-06
 
-[host-utility-269e4.md](host-utility-269e4.md) supersedes the unresolved-host-
+[host-utility-269e4.md](<host-utility-269e4.md>) supersedes the unresolved-host-
 entry and missing-selector7-publisher statements below. Evidence:
 `builds/phase11/replay/`, reusable `tools/ct_host_utility_audit.py`.
 

@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase20C6 — selected-generator takeover feasibility
 
 2026-10-07. **UNRESOLVED takeover ownership; comparison SELECT-A.** This is a

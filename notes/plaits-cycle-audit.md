@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 20A-TIMING — offline VariableSaw cycle audit
 
 ## Phase 20A-BOUND — current timing result (2026-10-07)
@@ -21,7 +23,6 @@ Report:notes/plaits-reachable-timing-bound.md. Evidence:builds/phase20a-bound/fi
 Earlier timing maxima/bounds below remain historical; this section supersedes
 those values for the unchanged REGOPT renderer's legal standalone domain.
 
-
 ## Phase 20A-REGOPT update — exact renderer preferred (2026-10-07)
 
 **IMPLEMENTED / TESTED / MEASURED:**442P,7 persistentX,3 spillX+16 work registers,
@@ -31,7 +32,7 @@ match native golden/oracle exactly; event order and helper unchanged.
 (-22.1511% mean,STRONG). Focused stress raises all-validated max12670/upper12682;
 structural upper23902. Ten-copy raw mean44.37%,worst77.33%,structural145.89%
 against conditional163840. Stock headroom/ABI/RAM remain **UNRESOLVED**.
-Report:[plaits-register-optimization.md](plaits-register-optimization.md).
+Report:[plaits-register-optimization.md](<plaits-register-optimization.md>).
 Canonical:builds/phase20a-regopt/final-report/. The prior optimization next step
 below is complete; next is control/state-aware structural-bound refinement.
 
@@ -53,7 +54,7 @@ polyphony or P:0x9DD integration. Host wall-clock times are not timing evidence.
 
 Pinned DSP56300FM Rev5 AppendixA/3.5/5.3 and DSP56724RM Rev1
 4.3/3.2 provide the timing/forwarding, private-memory and pipeline rules.
-[dsp56300-timing-model.md](dsp56300-timing-model.md) records exact pages/hashes
+[dsp56300-timing-model.md](<dsp56300-timing-model.md>) records exact pages/hashes
 and per-rule DOCUMENTED EXACT / DEVICE-FAMILY ASSUMPTION / UNRESOLVED status.
 Existing manuals only; no download/install. Visual inspection confirms one
 malformed short-MOVE timing row. Short stores use2 cycles in best/upper,

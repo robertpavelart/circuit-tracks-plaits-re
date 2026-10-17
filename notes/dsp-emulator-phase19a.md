@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19A — deterministic offline execution substrate
 
 2026-10-06. **IMPLEMENTED / TESTED:** a headless, forced-interpreter harness

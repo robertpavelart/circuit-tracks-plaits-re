@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19C-ASSETDATA — existing offline packs and actual-data address maps
 
 ## PACKLINK applicability update — 2026-10-06
@@ -8,7 +10,7 @@ assignment and raw transfer/write preserve the archive WAV header L. Successful
 missing-member deletion leaves the same native index absent. The native basename
 is initially the firmware fallback `pad2(i)+_PCM.wav`; later sample renaming
 retains the same prefix and uses the sanitized sample name. These are formulas,
-not invented observed filenames. See [PACKLINK](dsp-pack-native-link.md).
+not invented observed filenames. See [PACKLINK](<dsp-pack-native-link.md>).
 
 The unchanged12-dataset/768-record A/S/main/padding map can therefore be reused
 for **completed identical native imports**, with successful presence updates,

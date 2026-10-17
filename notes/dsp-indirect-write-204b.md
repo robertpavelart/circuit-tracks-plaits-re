@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 13 — count-gated indirect X write at P:204B
 
 ## Phase 19C-P204B — latest producer/replay gate (2026-10-06)
@@ -26,7 +28,7 @@ Six fixed scalar-reader arguments exclude the35D→saved35F precursor; variable/
 generic normal read arguments/cache ordering and other foreign-state aliases
 remain open. SERVICE5E private writes clear words, not directly publish positive
 count; service read capability is not a normal-only witness. Assets remain frozen.
-Current detailed report:[dsp-p204b-provenance.md](dsp-p204b-provenance.md).
+Current detailed report:[dsp-p204b-provenance.md](<dsp-p204b-provenance.md>).
 Evidence:builds/phase19c-p204b/final-v4/, final-v4-repeat/, checks-v4/.
 21 identical exports, focused schema/caller/scope tests, original/core/prior
 evidence guardsPASS. Next: targeted normalP19D saved-cursor/cache/count-table
@@ -35,7 +37,7 @@ Older next-step statements below are historical, not newly authorized work.
 
 ## Phase 14 update — first-writer analysis
 
-Current report: [dsp-x35f-invariant.md](dsp-x35f-invariant.md), evidence
+Current report: [dsp-x35f-invariant.md](<dsp-x35f-invariant.md>), evidence
 `builds/phase14/current/`. **Invariant NOT-YET-DETERMINED;204B remains a blocker.**
 No normal nonzero count setter recovered. Through202B's fixed35F load and
 zero-skip mode,204B cannot be the first nonzero count writer; other aliases

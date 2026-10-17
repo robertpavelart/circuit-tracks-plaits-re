@@ -1,0 +1,11 @@
+> Saved phase-scoped evidence; original next-step instructions are historical. [Current project state](../../CURRENT_STATUS.md).
+
+# Bounded negative sanity
+
+**PROVEN:** negative-tests.json (local-only reference: `builds/phase65-shi-model-closure/negative-tests.json`; not distributed) contains seven bounded checks. Three execute the unchanged candidate's `08037960` helper with command `20 01 00`: normal completion, delayed readiness, and absent receive completion. The delayed case returns the same completed command after more native instructions. The absent case stops at `0803798A` after the5000-instruction observer bound, retains24-bit framing and commits no width change. This is an observed firmware wait, not a firmware timeout exit.
+
+The remaining checks exercise incomplete-word framing, a255-word/510-byte stream, exact completion after the final two bytes, and a genuinely programmed255-word stream. Nonzero deterministic test bytes verify byte order and all256 left-justified results. One received byte cannot create a coefficient;510 bytes cannot create coefficient256.
+
+**PROVEN, continuous native negative:** incomplete-transfer/negative-result.json (local-only reference: `builds/phase65-shi-model-closure/incomplete-transfer/negative-result.json`; not distributed) reruns the same authentic prefix only because its first evidence writer failed before saving the final result. At the first512-byte coefficient DMA it supplies510 bytes, retains NDTR=2 and EN=1 on both streams, and withholds the completion IRQ. Native ARM remains at `08023414` for256 observed visits. It does not restore24-bit mode or post selector0. Geometry remains `110000000180003480908f01`. The observer stops the test; no semaphore is released and no cleanup command is invented.
+
+**PROVEN distinction:** SHI framing does not independently know that a descriptor should contain256 coefficients. If a caller genuinely requested510 bytes and received completion, the SHI abstraction stores255 words; it does not fabricate an error or pad the last coefficient. The actual normal ARM producer requests512. A separate native wrong-descriptor error exit is **UNKNOWN** and is not claimed. The truncated512-byte case proves the genuine completion wait while bytes remain.

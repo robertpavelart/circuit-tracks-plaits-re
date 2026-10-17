@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Circuit Tracks build 4486 — static firmware map
 
 Phase-3 follow-up: see `dsp-memory-map.md` and `dsp-command-map.md` for validated

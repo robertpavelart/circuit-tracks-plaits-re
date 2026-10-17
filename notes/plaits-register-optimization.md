@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 20A-REGOPT — exact standalone register optimization
 
 ## Phase 20A-BOUND — current timing result (2026-10-07)
@@ -20,7 +22,6 @@ any ten-voice claim, only under a separate phase request.
 Report:notes/plaits-reachable-timing-bound.md. Evidence:builds/phase20a-bound/final/.
 Earlier timing maxima/bounds below remain historical; this section supersedes
 those values for the unchanged REGOPT renderer's legal standalone domain.
-
 
 Completed2026-10-07. **IMPLEMENTED / TESTED / MEASURED:** preferred renderer
 442P,7 persistentX,3 spillX+16 working registers,32 outputY,0 tables, stackpeak3.

@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase20C — fixed one-path state and temporal storage
 
 ## Current Phase20C6 state comparison — 2026-10-07

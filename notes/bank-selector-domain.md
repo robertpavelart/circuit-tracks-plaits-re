@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 9 — local bank domains and normal parameter destinations
 
 2026-10-06. STATIC ANALYSIS ONLY. No hardware, transmissions, firmware execution,

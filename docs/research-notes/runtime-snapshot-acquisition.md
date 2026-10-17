@@ -1,3 +1,5 @@
+> Historical experiment scope, not the current global project stop point. [Current state](../CURRENT_STATUS.md).
+
 # Phase20B6 — acquisition design, no acquisition
 
 2026-10-07. **READY-FOR-ACQUISITION-DESIGN**, conditional on board, tool,

@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 20B-SEAM — local stock ABI obligations
 
 ## Phase 20B2-CHECKPOINT — PARTIAL provenance, replay REFUSED (2026-10-07)
@@ -24,7 +26,6 @@ Plaits feeding or new RAM-safety analysis. Single next step:qualify P657 input
 record for this exact patch plus one source-backed note/slot/history and bounded
 CPU context. Reports:stock-seam-checkpoint.md,stock-coefficient-provenance.md,
 stock-runtime-state.md. Canonical:builds/phase20b-checkpoint/final/.
-
 
 2026-10-07. **VERIFIED static map; UNRESOLVED executable integration ABI.**
 The replay admission gate is closed. See plaits-stock-seam.md and canonical

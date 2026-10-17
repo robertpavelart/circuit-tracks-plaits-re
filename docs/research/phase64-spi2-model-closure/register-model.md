@@ -1,0 +1,17 @@
+> Saved phase-scoped evidence; original next-step instructions are historical. [Current project state](../../CURRENT_STATUS.md).
+
+# SPI2 register identification and normal subset
+
+**PROVEN (vendor definitions):** `$40003808` is SPI2_SR, base40003800 plus08; reset0002. Its hardware flags are RXNE0, TXE1, MODF5, OVR6, BSY7, FRE8, FRLVL10:9 and FTLVL12:11. CRCERR4 has software clear behavior. CR1 master/SPE and CR2 data-size/threshold govern operation. Sources: [ST STM32F745 header](https://raw.githubusercontent.com/STMicroelectronics/cmsis-device-f7/master/Include/stm32f745xx.h), [ST RM0385 §32.9.3](https://www.st.com/resource/en/reference_manual/dm00124865-stm32f7-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf). The manual's indexed register excerpt was available; full PDF retrieval was size-limited, not independently archived.
+
+**PROVEN (vendor definitions):** DR reads consume received FIFO data; DR writes enqueue transmit data. RXNE follows the configured receive threshold; TXE indicates available transmit capacity, not completion of reception. Normal SR reads do not consume RX data. Error clearing differs: OVR uses DR-then-SR reads, MODF uses SR read then CR1 write/SPE clear, FRE uses SR read, CRCERR uses SR write. Source: [ST F7 HAL SPI definitions](https://raw.githubusercontent.com/STMicroelectronics/stm32f7xx-hal-driver/master/Inc/stm32f7xx_hal_spi.h), macros CLEAR_OVRFLAG/CLEAR_MODFFLAG/CLEAR_FREFLAG/CLEAR_CRCERRFLAG. These unused error-clear sequences are documented, not claimed exercised or fully modeled.
+
+**PROVEN:** Phase63 lacked a SPI2 status/data model. Zero-backed MMIO left TXE and RXNE clear; native37970/37986 could never progress. A real idle reset has TXE set and RXNE clear. Reset TXE alone is insufficient: receive progress needs clocked data.
+
+**PROVEN:** [spi2_model.py](<../../../builds/phase64-spi2-model-closure/spi2_model.py>), `SPI2.read/write/bind`, provides explicit CR1/CR2, four-byte TX/RX queues, delayed shifts only with master+SPE and SPI mode, FIFO-level/status derivation, byte DR enqueue/pop and I2SCFGR/CRC register latches required by initialization. Observed CR2=1703 means DS=7 and FRXTH=1. RCC APB1 enable is performed by unchanged native37858 code; its SPI2EN write is shown in candidate-08037770.asm. Active DMA completion remains the inherited explicit transaction/IRQ model, including MINC semantics; it is not mislabeled as CPU DR access.
+
+**STRONG INFERENCE:** a finite number of SR-poll steps abstracts clock progress for this polling helper's normal path. Delay3 is a deterministic test choice, not measured peripheral latency or DSP cycle timing. TXE and RXNE are never globally forced high. RXNE requires a completed transfer and clears when FIFO consumption falls below threshold. No raw firmware routine, task-ready field, geometry field or native branch return is patched.
+
+**UNKNOWN outside subset:** arbitrary I2S/16-bit/CRC/error recovery, competing DMA/PIO and silicon timing/cache effects are not qualified. Unsupported DR widths, empty DR reads and unmodeled SR writes stop the model. These limits prevent a general STM32 peripheral-model claim.
+
+[accessors.md](<accessors.md>) enumerates all31 authenticated PC/access/register combinations observed in the completed prefix, with values and counts. Full function listings and direct-call/literal candidates are separately retained. Accesses after the unresolved task frontier remain unknown.

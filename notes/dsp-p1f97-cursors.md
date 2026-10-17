@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 15 — P:1F97 cursor sources and preservation limit
 
 2026-10-06. STATIC ONLY. No hardware, MIDI/SysEx transmission, flashing,

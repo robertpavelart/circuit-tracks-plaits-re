@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19C-HOSTWRITE — normal host destinations and persistent cursor state
 
 ## Phase 19C-PACKLINK — current asset applicability
@@ -17,7 +19,7 @@ is **UNRESOLVED**; historical DLR / Sofa Sound→23 is insufficient current-stat
 evidence. Universal host/asset closure:NO; X11 STATE-DEPENDENT, parent replay:NO,
 target bridge unchanged. Retain independent cache/space/order/ancestry and DSP
 indirect mutation obligations. Stop further generic asset work; next independent
-obligation is P:0x204B, not analyzed here. See [PACKLINK](dsp-pack-native-link.md)
+obligation is P:0x204B, not analyzed here. See [PACKLINK](<dsp-pack-native-link.md>)
 and builds/phase19c-packlink/final-v2/. Older next-step recommendations below are
 historical; recovered host protocols/exclusions are retained.
 
@@ -32,7 +34,7 @@ under their stated mapping. **UNRESOLVED:** selected native source and archive
 slot/content correspondence; no all-normal host exclusion or memory-ownership
 promotion. X11STATE-DEPENDENT; no actual X/Y store proof. Other host order/ancestry,
 204B and DSP writers remain independent; parent replayNO/bridge unchanged.
-See[dsp-asset-offline-data.md](dsp-asset-offline-data.md), canonical
+See[dsp-asset-offline-data.md](<dsp-asset-offline-data.md>), canonical
 builds/phase19c-assetdata/final/.25 repeat-identical files,733 header/768 arithmetic/
 24576 target checks and1273 source hash/size/mtime preservation checksPASS;0 CPU ops.
 
@@ -51,12 +53,12 @@ Y result does not close foreign host activity during waits. Requested asset
 contributions UNRESOLVED; family NOT CLOSED; parent replayNO/bridge unchanged.
 Other host coherence/ancestry,204B and DSP aliases stay independent.
 **Data stop applied:** exact selected PCM directory/files and selection metadata
-are absent. See[dsp-asset-backend-bounds.md](dsp-asset-backend-bounds.md).
+are absent. See[dsp-asset-backend-bounds.md](<dsp-asset-backend-bounds.md>).
 12 canonical artifacts identical;8 tests/refusal/input/core checksPASS;0 CPU ops.
 
 ## Phase 19C-ASSETBOUND — current asset-family gate
 
-2026-10-06. [dsp-asset-loader-bounds.md](dsp-asset-loader-bounds.md) resolves
+2026-10-06. [dsp-asset-loader-bounds.md](<dsp-asset-loader-bounds.md>) resolves
 the local64-record arithmetic. **VERIFIED:** accepted stable L<=19,200,000;
 R8<=927D00; A64<=24F74000 with no32-bit wrap. Every record directly emits
 294AC page setup, so scalar-address cache hits cannot suppress it. All main

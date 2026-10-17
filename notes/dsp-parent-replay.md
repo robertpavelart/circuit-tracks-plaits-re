@@ -1,8 +1,10 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19C-PARENT — normal predecessor and replay qualification
 
 ## Phase 19C-HOSTWRITE — parent execution still closed
 
-2026-10-06. [dsp-host-write-provenance.md](dsp-host-write-provenance.md)
+2026-10-06. [dsp-host-write-provenance.md](<dsp-host-write-provenance.md>)
 resolves ARM cache initialization toFFFF from stock initialized-data decoding.
 It does not establish normal host cursor/order/extent preservation or a1E15
 target. Private address setup updatesX10/X11; page/extended write forms retain
@@ -15,7 +17,7 @@ Canonical evidence builds/phase19c-hostwrite/final-v3/ and checks-v3/.
 
 ## Phase 19C-TARGETBRIDGE — current target gate
 
-2026-10-06. [dsp-effect-target-bridge.md](dsp-effect-target-bridge.md) records
+2026-10-06. [dsp-effect-target-bridge.md](<dsp-effect-target-bridge.md>) records
 **C: normal reachability UNRESOLVED**.640 conditional valid-table records
 exclude1E15, but actual selector/table/descriptor0 preservation is unproved.
 No parent execution or new actual active-loop/stack class derived. A future

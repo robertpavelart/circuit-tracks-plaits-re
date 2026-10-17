@@ -1,15 +1,7 @@
-# Pinned upstream source — static study only
+# Plaits integration research
 
-`upstream/` contains183 official text-source files (1,241,908 bytes), from
-eurorack08460a69a7e1f7a81c5a2abcc7189c9a6b7208d4 and its stmlib submodule
-e3bd7c9cc00e4364166f9905c0509b6ffd0535ec. No fork or source modification.
+Current target: four melodic Plaits tracks, default mono, shared model code with independent per-track state, MAX_TRACKS_PER_MODEL=2 and MAX_POLY_TRACKS=2 globally, with engine-specific admission limits and eventual24-model scope. This is a design, not a hardware-qualified implementation.
 
-Git blob hashes and SHA256 values are recorded in source-manifest.json.
-This is a scoped source corpus, not a complete build checkout: vendor/CAD/
-binary/toolchain files are excluded. Selected generator include closures are
-complete; full module Voice user-flash hardware support is deliberately omitted.
-The retained code's MIT notices apply; hardware and unrelated AVR licensing
-must not be inferred from them.
+The current candidate is a temporary NOR diagnostic and contains no Plaits engine. Authentic82000 evidence is still missing; P:0282-0386 reclaim and final safe P/X/Y budgets remain unqualified/UNKNOWN. See ../docs/PLAITS_RESEARCH_STATE.md and ../docs/MEMORY_AND_RESOURCE_STATUS.md.
 
-No source is compiled here. See notes/plaits-architecture.md and
-notes/plaits-resource-comparison.md for evidence, estimates and unresolved fit.
+`poc/` and `seam/` retain project-authored historical experiments, including VariableSaw and later dual-replacement/Modal work. Their per-experiment claims are not current global status. Upstream source code is fetched locally, not vendored here; `upstream/source-manifest.json` records revision/hash metadata. Preserve MIT notices in poc/LICENSE and source headers.

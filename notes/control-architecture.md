@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Long-term control architecture — user-stated design target
 
 ## Phase 20B-SEAM — replay admission refused (2026-10-07)
@@ -27,7 +29,6 @@ checkpoint upstream of9D9; qualify stock-only post replay before Plaits feeding.
 Reports:plaits-stock-seam.md,plaits-stock-abi.md,plaits-stock-workload.md.
 Canonical:builds/phase20b-seam/final/; unexecuted trace dirs contain refusal.json.
 
-
 ## Phase 20A-DIV update — standalone helper only (2026-10-06)
 
 **IMPLEMENTED / TESTED / MEASURED:** the nativeDIV primitive variant uses700P
@@ -35,7 +36,7 @@ and mean5138.4363 issued opcodes/32, preserving the same7 persistent words,
 44 allocated scratch and all output/state bytes. Control architecture below
 is unchanged. Track routing, model switching, polyphony, stock filters/envelopes,
 RAM ownership and integration remain **UNRESOLVED / unimplemented**.
-See[plaits-native-div.md](plaits-native-div.md).
+See[plaits-native-div.md](<plaits-native-div.md>).
 
 ## Phase 20A — standalone control scope (2026-10-06)
 
@@ -57,7 +58,7 @@ the eight-knob adapter. No hardware or firmware changes.
 must account for summed compute/control/state/mixing and proven stock lifetimes;
 simple scalar multiplication is only an estimate. RAM ownership and timing/ABI
 remainUNRESOLVED/FROZEN, not solved by standalone success. See
-[plaits-variablesaw-poc.md](plaits-variablesaw-poc.md).
+[plaits-variablesaw-poc.md](<plaits-variablesaw-poc.md>).
 
 Recorded2026-10-06 during Phase9. This records the requested future architecture,
 not stock firmware behavior or a resource-qualified implementation plan.

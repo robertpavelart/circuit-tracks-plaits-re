@@ -1,125 +1,28 @@
-# Circuit Tracks Plaits RE
+# Circuit Tracks / Plaits research
 
-Experimental reverse-engineering and DSP integration research toward running Mutable Instruments Plaits-derived synthesis engines inside a Novation Circuit Tracks.
+## Status — October 2026
 
-> **Status — October 2026**
->
-> - Long-term goal: four melodic Plaits tracks inside Circuit Tracks.
-> - Current artifact: temporary NOR diagnostic firmware, not Plaits firmware.
-> - Current candidate: Phase63 `N63DEV`, reviewed through Phase67.
-> - Hardware-tested candidate: **NO**.
-> - Phase67 scoped model preflight: **PASS**.
-> - USB Storage joint path: **PASS**.
-> - Operational preflight: **UNQUALIFIED**.
-> - Remaining offline uncertainty: post-READY indirect allocation reachability with an 8-byte modeled heap gap.
-> - Recovery: bootloader entry/exit physically rehearsed; recovery flashing is not yet proven.
-> - Operational host/uploader: intentionally locked.
-> - Next step: separately reviewed operational-release preparation, then a controlled hardware test.
+| Question | Current state |
+|---|---|
+| Long-term goal | Four melodic Plaits tracks on Circuit Tracks, retaining useful sequencer, drums, mixer, FX and project workflow where feasible |
+| Current artifact | Temporary NOR diagnostic firmware, **not Plaits** |
+| Candidate hardware-tested | **NO**; only user-reported recovery entry/exit rehearsal |
+| Known offline firmware blockers | None demonstrated |
+| Operational release | **NOT YET ENABLED**; host and uploader LOCKED |
+| Residual software uncertainty | Post-READY indirect allocation reachability with only eight bytes modeled heap gap |
+| Recovery | Bootloader entry/exit physically rehearsed; recovery flashing not tested or guaranteed |
+| Next step | Separately reviewed operational release → controlled hardware test preparation |
 
-## Long-term goal
+**OPERATIONAL PREFLIGHT = UNQUALIFIED. POST-READY ALLOCATION CENSUS = UNQUALIFIED. USB STORAGE JOINT PATH = PASS.**
 
-The project has moved beyond the original single-voice VariableSaw proof of concept.
+Current through 17 October 2026 (Europe/Moscow). The Phase63 artifact is a temporary NOR diagnostic, not Plaits firmware; it has not been hardware-tested. Phase67's FINAL PREFLIGHT CLOSURE = PASS remains valid only within its scoped model. No concrete offline firmware blocker has been demonstrated; the accepted residual software uncertainty is post-READY indirect allocation reachability with an eight-byte modeled heap gap. Tools remain locked. Risk acceptance is neither proof nor authorization to use them.
 
-The current target architecture is:
+The independent Claude review is **reported by the user** as: **REASONABLE TO PROCEED WITH CONTROLLED HARDWARE TEST**, subject to explicitly accepted residual risk. The reported review found no concrete offline firmware blocker or bootloader-loss path and recognized the actual defect fixes. This records the supplied review conclusion, not a new independent review in this task. Later allocation findings remain SOFTWARE UNKNOWN even though earlier review emphasized hardware/model uncertainty. Neither favorable review nor accepted soft-brick risk changes OPERATIONAL PREFLIGHT = UNQUALIFIED or enables tools.
 
-- four melodic Plaits tracks;
-- default mono operation;
-- `MAX_TRACKS_PER_MODEL = 2`;
-- `MAX_POLY_TRACKS = 2` globally;
-- engine-specific polyphony limits;
-- shared model code with independent per-track state;
-- retain useful Circuit workflow, sequencer, drums, mixer, effects and rollback behavior where feasible.
+Start with [HANDOFF.md](<docs/HANDOFF.md>), [CURRENT_STATUS.md](<docs/CURRENT_STATUS.md>) (exact candidate/tool/rollback identities), [NEXT_STEPS.md](<docs/NEXT_STEPS.md>) and [DOCUMENTATION_INDEX.md](<docs/DOCUMENTATION_INDEX.md>).
 
-The current diagnostic firmware does **not** contain Plaits.
+**H4 remains FAILED (H4 = FAIL) for bounded in-session recovery.** On any failed or uncertain raw capture: discard all partial evidence; DO NOT RETRY; send no second diagnostic/Storage request or cleanup command; full physical power OFF, USB unplugged, session ends. No forced semaphore release. A reset, new process, session identifier or deleted attempt marker is not a power-cycle substitute.
 
-## Current diagnostic candidate
+Authentic `$82000-$821FF` coefficients have not been captured. P:`$0282-$0386` reclaim is not finally qualified; final safe P/X/Y budget remains UNKNOWN. Future four-track design shares model code and keeps independent track state; default mono, `MAX_TRACKS_PER_MODEL = 2`, `MAX_POLY_TRACKS = 2`, engine-specific polyphony, eventual 24 engines.
 
-`circuittracks-nor-defect-closure-development.syx`
-
-- size: 569229 bytes
-- SHA-256: `9b420521a366c65c13fb871778fdbab612ca126cbb4ad60d0fd5bc12ecd253da`
-- CRC-32/MPEG-2: `1BB21302`
-- marker: `N63DEV`
-
-Decoded BIN:
-
-- size: 413952 bytes
-- SHA-256: `edf4f267030a6c5e8198213372086b89b4ccaaae74741e80ce7c241129a91cd9`
-- application range: `0x08010000 .. 0x08075100`
-
-Phase61 and Phase62 are failed/superseded and are not current candidates.
-
-## Why this diagnostic exists
-
-The immediate research goal is to obtain authentic evidence from NOR/QSPI address `$82000`.
-
-Until that evidence exists:
-
-- reclaim of `P:$0282-$0386` is not finally qualified;
-- final safe P/X/Y budget remains **UNKNOWN**;
-- full Plaits hardware integration remains blocked.
-
-## Current offline status
-
-Earlier concrete defects were fixed, including:
-
-- reservation/publication logic;
-- SD/NOR geometry invalidation;
-- status ambiguity;
-- DMA lifetime/fence handling;
-- late-success failure-state handling;
-- focused USB Storage/diagnostic concurrency.
-
-The focused USB joint-path closure is **PASS**.
-
-The stronger operational preflight remains **UNQUALIFIED** because static analysis cannot exhaustively bind every post-READY indirect/virtual callback target.
-
-No post-READY allocation larger than the remaining 8-byte modeled heap gap has been found, but its absence is not proven.
-
-## Recovery status
-
-Physically rehearsed on the user's unit:
-
-- recovery/bootloader mode can be entered;
-- recovery mode can be exited by full power cycle;
-- B1.3 boots normally afterward.
-
-Not yet proven:
-
-- recovery-mode host enumeration;
-- uploader handshake in recovery;
-- actual recovery flashing;
-- recovery from a non-booting diagnostic candidate;
-- guaranteed recovery.
-
-No concrete bootloader-loss path has been identified in the current candidate. Candidate-specific physical recovery remains a hardware-only unknown.
-
-## Operational tools
-
-The frozen host and uploader remain intentionally locked. They are not an enabled operational release.
-
-Do not treat the presence of the diagnostic candidate as authorization to use the locked tools.
-
-## Repository policy
-
-Do not commit proprietary Novation firmware, extracted DSP payloads, vendor PDFs, user projects, sample packs, or device dumps.
-
-See `docs/REPOSITORY_POLICY.md`.
-
-## Source layout
-
-- `tools/` — firmware/DSP analysis and validation utilities
-- `emulator/` — DSP56300 replay harnesses and tests
-- `plaits/` — Plaits-derived PoC and integration work
-- `notes/` — detailed research history and superseded branches
-- `docs/` — current project state and research documentation
-
-## Hardware rule
-
-No opening, soldering, multimeter probing, JTAG/OnCE/SWD, or internal access.
-
-Normal external interfaces only.
-
-## Disclaimer
-
-Unofficial research project. Not affiliated with or endorsed by Novation, Focusrite, Mutable Instruments, NXP, or upstream community projects.
+Historical build/evidence directories and the earlier `circuit-tracks-plaits-re/` source snapshot are preserved, not current operational instructions. Phase61/original Phase62 are FAILED / SUPERSEDED / DO NOT FLASH; Phase43 is SUPERSEDED. See [FINAL_DOCUMENTATION_AUDIT.md](<docs/FINAL_DOCUMENTATION_AUDIT.md>) for supersession and this update's audit.

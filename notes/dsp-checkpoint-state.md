@@ -1,8 +1,10 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 19C-CHECKPOINT: partial snapshot contract
 
 ## Phase 19C-PARENT — actual normal checkpoint not admitted
 
-2026-10-06. [dsp-parent-replay.md](dsp-parent-replay.md) records the current
+2026-10-06. [dsp-parent-replay.md](<dsp-parent-replay.md>) records the current
 gate. **UNRESOLVED:** no verified normal predecessor publishes a1E15 target,
 or actual SP/SC/frame history at parent entry. Do not supply descriptor/table
 targets, reset depth, LF0, incoming LA/LC or foreign-actor exclusion by hand.

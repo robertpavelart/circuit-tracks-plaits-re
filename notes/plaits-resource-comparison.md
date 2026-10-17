@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 7 — static Plaits resource comparison
 
 ## Current Phase20C one-path design update — 2026-10-07
@@ -56,7 +58,6 @@ checkpoint upstream of9D9; qualify stock-only post replay before Plaits feeding.
 Reports:plaits-stock-seam.md,plaits-stock-abi.md,plaits-stock-workload.md.
 Canonical:builds/phase20b-seam/final/; unexecuted trace dirs contain refusal.json.
 
-
 ## Phase 20A-BOUND — current timing result (2026-10-07)
 
 **TESTED / CALCULATED:** unchanged442P renderer, reset-reachable maximum13335
@@ -78,7 +79,6 @@ Report:notes/plaits-reachable-timing-bound.md. Evidence:builds/phase20a-bound/fi
 Earlier timing maxima/bounds below remain historical; this section supersedes
 those values for the unchanged REGOPT renderer's legal standalone domain.
 
-
 ## Phase 20A-REGOPT update — stronger raw compute case (2026-10-07)
 
 **IMPLEMENTED / TESTED / MEASURED:**442P,7 persistentX,3 spillX+16 work registers,
@@ -88,7 +88,7 @@ all-validated peak12670, structural23902. Conceptual1+1+4+4 target:44.37% mean,
 77.33% worst validated,145.89% structural at conditional163840 clocks/block.
 Raw margin improves; no qualified stock scheduler/RAM/ABI fit. Remaining largest
 family registerMOVE23.10%; no Circuit allocation/integration or polyphony.
-Report:[plaits-register-optimization.md](plaits-register-optimization.md).
+Report:[plaits-register-optimization.md](<plaits-register-optimization.md>).
 Stock costs/clock/contention remain **UNRESOLVED**; ownership work staysFROZEN.
 
 ## Phase 20A-TIMING update — conditional compute frontier (2026-10-06)
@@ -103,7 +103,7 @@ already117.19%. Actual stock scheduling margin/RAM/ABI remains **UNRESOLVED**.
 No stock opcode counts added to cycles. Largest modeled family is long-X MOVE
 36.00%; candidate next standalone optimization is scratch/register scheduling,
 not another divider change. No optimization/integration here. Full report:
-[plaits-cycle-audit.md](plaits-cycle-audit.md).
+[plaits-cycle-audit.md](<plaits-cycle-audit.md>).
 
 ## Phase 20A-DIV update — ratio compute risk reduced (2026-10-06)
 
@@ -114,7 +114,7 @@ and block states exactly equal the existing oracle/fallback. At48kHz this is
 7.70765M mean /13.434M worst issued opcodes/second for one primitive.
 Ten-copy arithmetic is **ESTIMATE** only; DSP cycles/stock headroom and RAM/ABI
 remain **UNRESOLVED**. No fullVoice/model/polyphony or firmware integration.
-Complete report:[plaits-native-div.md](plaits-native-div.md).
+Complete report:[plaits-native-div.md](<plaits-native-div.md>).
 
 ## Phase 20A — measured standalone primitive (2026-10-06)
 
@@ -123,9 +123,9 @@ fixed-point study now passes its bounded A–K gates. Reference includes unchang
 pinned MI headers; target executes a new708-P-word program in the sealed existing
 DSP56300 interpreter, without a Circuit image/peripherals or any stock allocation.
 Exact six-header subset and numeric contract are documented in
-[plaits-variablesaw-poc.md](plaits-variablesaw-poc.md),
-[plaits-fixed-point.md](plaits-fixed-point.md),
-[plaits-resource-measurements.md](plaits-resource-measurements.md).
+[plaits-variablesaw-poc.md](<plaits-variablesaw-poc.md>),
+[plaits-fixed-point.md](<plaits-fixed-point.md>),
+[plaits-resource-measurements.md](<plaits-resource-measurements.md>).
 
 Measured retained state7 X words, scratch44 X, controls3 X, output32 Y;
 total logical data86 words, tables0, hardware stack peak5 entries/10 words.
@@ -152,7 +152,7 @@ newly authorized standalone study. They remain valid integration limitations.
 ## Phase 8 resource update — 2026-10-06
 
 The source comparison is unchanged; no upstream refetch, compilation or port.
-See [plaits-poc-memory.md](plaits-poc-memory.md) for the after-init audit.
+See [plaits-poc-memory.md](<plaits-poc-memory.md>) for the after-init audit.
 
 **SOURCE-DERIVED:**raw VariableSawOscillator has six float scalars plusbool,
 25 payload bytes excluding ABI;13 DSP words is only a bit-preserving illustration.

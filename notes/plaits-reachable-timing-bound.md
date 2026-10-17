@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 20A-BOUND — legal VariableSaw timing domain
 
 Completed 2026-10-07. **TESTED / CALCULATED:** the unchanged 442-P-word renderer

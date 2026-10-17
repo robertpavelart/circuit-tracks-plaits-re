@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 20C4-PREGION — one appended P object
 
 ## Current follow-up: Phase20C5-ENFORCEDSTATE - 2026-10-07

@@ -1,0 +1,29 @@
+> Saved phase-scoped evidence; original next-step instructions are historical. [Current project state](../../CURRENT_STATUS.md).
+
+# Phase46 — filesystem LBA binding
+
+**PROVEN:** drive0 maps file writes to external ARM NOR. Drive1 maps them to the SD backend. DSP external SDRAM is unrelated. **UNKNOWN:** the actual unit's mounted geometry, file allocation and every pre-capture dirty/restore condition. The stock filesystem checks do not supply a universal physical partition bound.
+
+| Layer | Exact binding / arithmetic / limits |
+|---|---|
+| Pack selection | `0801F0F0` constructs volume0 (`2000690C`, disk`20000AA0`, pack0) and volume1 (`20006910`, disk`20001AF4`, packs1..31). `0801F18A` maps pack0 to first volume and other accepted pack IDs to second. Paths become `0:/Tracks` or `1:/Tracks`. `_GLOB.cg` type0 resolves through the internal volume. |
+| File operations | Content op7 → worker`08036B1C` → file vtable+14 →`08025D98` → native FAT writer`08019E50`. Content delete op5 →`08036CCC`. Types2..6 cover Sessions/Patches/PCM/meta/effects. Closing/syncing can also emit metadata writes. |
+| Logical drive | `0801A7AC`: drive0 →`20000AA0`; drive1 →`20001AF4`; other drive returns4. It tail-calls`0801AF1E`. |
+| Physical binding | `0801F0A8 → 0801AE3A` writes disk+4 from NOR wrapper`[20006968]` or SD wrapper`[2000696C]`. Disk+8 selects initialized geometry. This is a constructor edge, not an inference from a fixture name. |
+| Drive0 | Geometry`20000A98`: base`D4000`, sector size`1000` (4096B). Nominal available extent `D4000,2000000)` =`1F2C` sectors, derived from the32MiB layout, not enforced by the mapper. `physical=(base+LBA*sector) mod2^32`, `length=(count*sector) mod2^32`, erase-first flag1. |
+| Drive1 | Geometry`20001AEC`: base0, initial sector size`200` (512B), SD wrapper. `0801AE90` ioctl2 queries backend geometry and overwrites geometry+4. Capacity is medium-dependent; no fixed SD size is asserted. No SD-to-NOR rebinding was found in the constructor/dispatcher references. |
+| FAT mount | `080197A0`: physical drive validated, sector size queried, requires power of2 in512..4096. Reads VBR or up to four MBR partition starts; validates BPB sector size, FAT count1/2, nonzero power-of2 cluster size, nonzero reserved sectors, FAT class and sufficient FAT space. `08019904–080199B8` derives volume geometry from disk bytes. It does not compare BPB total sectors plus partition start against physical sector capacity. |
+| Cluster mapper | `08018698` requires unsigned`cluster-2 < n_fatent-2`, then32-bit `database+(cluster-2)*sectors_per_cluster`. Bounds are relative to mounted BPB geometry. They are not a NOR partition bound. |
+| Flush | `0801859A` writes dirty window at`fs+38`, possibly second FAT at`window+fatsize`; `08018612` writes FAT32 FSInfo at`volbase+1`. `0801A010` f_sync flushes FIL cached sector, directory metadata, then filesystem sync. These destinations inherit the same mounted geometry. |
+
+Evidence: [volume constructors (local-only reference: `builds/phase46-msd-filesystem-closure/app-0801f0f0.asm`; not distributed), backend binding (local-only reference: `builds/phase46-msd-filesystem-closure/app-0801f080.asm`; not distributed), disk dispatch (local-only reference: `builds/phase46-msd-filesystem-closure/app-0801a780.asm`; not distributed), mapper/ioctl (local-only reference: `builds/phase46-msd-filesystem-closure/app-0801ae00.asm`; not distributed), mount (local-only reference: `builds/phase46-msd-filesystem-closure/app-080197a0.asm`; not distributed), BPB geometry tail (local-only reference: `builds/phase46-msd-filesystem-closure/app-080198e0.asm`; not distributed), file writer/sync (local-only reference: `builds/phase46-msd-filesystem-closure/app-08019e50.asm`; not distributed), window/FSInfo/cluster code (local-only reference: `builds/phase46-msd-filesystem-closure/app-0801855c.asm`; not distributed).
+
+## Countermodel beyond Phase45's arbitrary mapper arguments
+
+**PROVEN in native functions:** native-cases.json (local-only reference: `builds/phase46-msd-filesystem-closure/native-cases.json`; not distributed) `fat` supplies a synthetic FAT32 VBR,4096-byte sectors,1 sector/cluster,1 reserved sector,1 FAT of4096 sectors, total`110000` sectors. Native mount succeeds (0), filesystem type3, `database=1001`, `n_fatent=10F001`. Accepted clusters`FEFAE/FEFAF` produce LBAs`FFFAD/FFFAE` through the native cluster mapper. Native f_write, using constructed FIL records with matching native mount IDs, returns0/4096 bytes and emits those exact LBAs. Phase45's already-persisted native disk-mapper tests establish their physical wrap to81000/82000 and erase-first submission.
+
+This joins an accepted mount geometry to f_write; it is stronger than injecting arbitrary arguments directly into the mapper. Disk reads/completions are modeled. FIL records are constructed, not produced by native directory lookup. No actual unit VBR, FAT chain, complete startup save/delete or physical NOR overwrite is demonstrated. Therefore it disproves a general bounds guarantee but does not establish YES for this unit's planned first capture.
+
+For authenticated well-formed geometry, the sufficient condition remains`LBA < 1F2C` and`count <= 1F2C-LBA`, stable NOR binding, and consistent sector size4096. That would confine all drive0 writes above D4000. Those predicates are **UNKNOWN** for every reachable pre-capture operation. Pack/sample/project names alone cannot close them. USB virtual disk uses its own bridge and is covered separately in [msd-reachability.md](<msd-reachability.md>).
+
+The ioctl2 geometry-update code is common to both disk objects. Drive0's4096-byte value is demonstrated in initialized data and prior native fixture tests; a claim of lifetime geometry immutability would additionally need the backend query-result invariant. Phase46's mount countermodel explicitly supplies4096 at that query seam and does not assume it proved all live backend geometry responses.

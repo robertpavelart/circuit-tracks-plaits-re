@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 5 — selected voice output contract
 
 ## Phase 20B-SEAM — replay admission refused (2026-10-07)
@@ -27,7 +29,6 @@ checkpoint upstream of9D9; qualify stock-only post replay before Plaits feeding.
 Reports:plaits-stock-seam.md,plaits-stock-abi.md,plaits-stock-workload.md.
 Canonical:builds/phase20b-seam/final/; unexecuted trace dirs contain refusal.json.
 
-
 **Phase 6C update:** X:2C66 must remain readable and participates in
 neighboring filter scratch. A universally arbitrary value or duplicate-last-
 sample rule is not proved; retain stock neighboring behavior until all consumers
@@ -37,7 +38,7 @@ begin; safe allocation, complete producer ABI and fit are still unresolved.
 
 **Phase 6 revision:** selected loop subtotal corrected to 4,355; clock/rate
 divider chain and shared scratch ownership audited in
-[dsp-resource-audit.md](dsp-resource-audit.md). Earlier saved Phase 5 reports
+[dsp-resource-audit.md](<dsp-resource-audit.md>). Earlier saved Phase 5 reports
 with 3,635 are superseded, retained for provenance. The seam's complete
 replacement ABI and safe state allocation remain **UNRESOLVED**.
 
@@ -47,7 +48,7 @@ address readable; its final prefetched value is unused in the selected output.
 Incoming r0/r4 and AGU/status/caller-loop context remain obligations; incoming
 A and immediate branch condition codes are redefined by 9DD/9DE. No blanket
 all-mode register-clobber permission is established. See
-[dsp-memory-ownership.md](dsp-memory-ownership.md) and the exported clobber table.
+[dsp-memory-ownership.md](<dsp-memory-ownership.md>) and the exported clobber table.
 
 2026-10-05. STATIC ANALYSIS ONLY. No device access, firmware execution,
 transmission, binary patch, original/ modification or Plaits implementation.

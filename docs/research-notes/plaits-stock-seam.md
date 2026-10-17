@@ -1,3 +1,5 @@
+> Historical experiment scope, not the current global project stop point. [Current state](../CURRENT_STATUS.md).
+
 # Phase 20B-SEAM — original-code boundary, replay refused
 
 2026-10-07. **VERIFIED:** fresh byte checks establish the mono generation/post
@@ -16,15 +18,15 @@ The only new executed tests are host-side numeric fixtures and refusal tests.
 
 **VERIFIED:** the cleaner candidate checkpoint is **P:0x9D9**, not forcing entry
 at9DD. DO32 at9C6 ends at9D8, whose last `move a,x:(r1)+` completes the32
-mono words X:[2C46,2C66). Natural fall-through then executes:
+mono words X:2C46,2C66). Natural fall-through then executes:
 
 | P | Bytes | Instruction / purpose |
 |---|---|---|
-|9D9|688700|load Y:7 intoR0, restoring the coefficient cursor|
-|9DA..9DC|000000 each|three NOPs before indirect R0 use|
-|9DD|56D800|load X:(R0)+ intoA: first post selector|
-|9DE|014085|compare selector with0|
-|9DF|0AF0AA 000A19|zero selects the simple BDD post path|
+|9D9| raw instruction bytes omitted |load Y:7 intoR0, restoring the coefficient cursor|
+|9DA..9DC| raw instruction bytes omitted |three NOPs before indirect R0 use|
+|9DD| raw instruction bytes omitted |load X:(R0)+ intoA: first post selector|
+|9DE| raw instruction bytes omitted |compare selector with0|
+|9DF| raw instruction bytes omitted |zero selects the simple BDD post path|
 
 9DD is already post-processing dispatch, not still lane synthesis. 9D9 is the
 pointer-restoration entry immediately after completed generator output. Including
@@ -56,7 +58,7 @@ was supplied. Downstream group/mixer/FX paths are separately scheduled.
 
 ## B–D. ABI, representation and guard
 
-See [plaits-stock-abi.md](plaits-stock-abi.md) for precise obligations and
+See [plaits-stock-abi.md (local-only reference: `docs/research-notes/plaits-stock-abi.md`; not distributed) for precise obligations and
 `seam-liveins.json`, `guard-word.json`, `seam-clobbers.json`. Signed24 mono
 storage is verified; absolute audio normalization and stable feedback headroom
 are not. Q1.23 is not adopted as a calibrated stock buffer/audio ABI.
@@ -122,7 +124,7 @@ instructions/0 joined blocks/0 CPU instances. Eleven unit tests pass.
 
 ## J–O. Workload and budgets
 
-See [plaits-stock-workload.md](plaits-stock-workload.md). No retained per-voice,
+See plaits-stock-workload.md (local-only reference: `docs/research-notes/plaits-stock-workload.md`; not distributed). No retained per-voice,
 group/block, adapter or call-glue cycle measurement is available. LayerA remains
 the validated prior renderer; layersB/C are **UNRESOLVED**. Do not turn issued
 body counts from Phase5/6 into stock cycles. Known ten-generator upper subtotal

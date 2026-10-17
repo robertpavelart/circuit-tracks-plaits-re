@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 7 — official Plaits architecture, static comparison
 
 2026-10-05. FEASIBILITY STUDY ONLY. No Circuit hardware, MIDI/SysEx, firmware

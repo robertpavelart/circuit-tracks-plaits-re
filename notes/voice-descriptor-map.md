@@ -1,3 +1,5 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 4 — event, descriptor and sample path (build 4486)
 
 Phase 5 follow-up: see `voice-output-contract.md` for both lookup passes,

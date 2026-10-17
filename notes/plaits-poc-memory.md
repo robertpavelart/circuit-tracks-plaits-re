@@ -1,8 +1,10 @@
+> Research/design evidence with its original experimental scope. Historical blockers and next steps below are not current project instructions; see [current state](../docs/CURRENT_STATUS.md).
+
 # Phase 8 — after-init memory audit for VariableSawOscillator
 
 ## Phase 14 update — invariant still unresolved
 
-See [dsp-x35f-invariant.md](dsp-x35f-invariant.md), `builds/phase14/current/`.
+See [dsp-x35f-invariant.md](<dsp-x35f-invariant.md>), `builds/phase14/current/`.
 **NOT-YET-DETERMINED:** X35F==0 at every normal203A entry. No disproof or
 normal nonzero setter. A conditional first-writer lemma removes204B itself
 as an initiating cause, but not as a high-X blocker once other writers/entry
@@ -17,7 +19,7 @@ provenance/preservation; do not silently discard other unclosed store domains.
 
 ## Phase 13 update — allocation remains gated
 
-[dsp-indirect-write-204b.md](dsp-indirect-write-204b.md), evidence
+[dsp-indirect-write-204b.md](<dsp-indirect-write-204b.md>), evidence
 `builds/phase13/final/`, corrects the outstanding descriptor count hypothesis.
 **VERIFIED:** boot clear and recovered ARM286E4 publish0 atX35F; the20 supplied
 by27A10 is the separate X2FA source count.204B writes one word per record,
@@ -32,7 +34,7 @@ Static analysis is not proved exhausted. Next: scoped X35F preservation proof.
 
 ## Phase 12 update — normal-only allocation proof
 
-See [dsp-effect-memory.md](dsp-effect-memory.md), `builds/phase12/final/`.
+See [dsp-effect-memory.md](<dsp-effect-memory.md>), `builds/phase12/final/`.
 The user's two axes are independent: **NORMAL-RUNTIME SAFE: NOT-YET-DETERMINED**;
 **SERVICE-ROBUST: NO** forX[5F00,6000). Service request5E is not a normal-RAM
 blocker. No normal-safe256/128/64-word subrange, layout, reservation or port.
@@ -57,7 +59,7 @@ X[2C46,2C66) and readable/filter2C66 retain their contract. No Plaits work.
 
 ## Phase 11 update — 2026-10-06
 
-See [host-utility-269e4.md](host-utility-269e4.md) and `builds/phase11/replay/`.
+See [host-utility-269e4.md](<host-utility-269e4.md>) and `builds/phase11/replay/`.
 No256-,128-, or64-word allocation is **VERIFIED AVAILABLE AFTER INIT**;
 no theoretical layout or Plaits compilation/implementation.
 
@@ -79,7 +81,7 @@ modifier invariants. Original/extract hashes and codec roundtrip are rechecked.
 
 ## Phase 10 update — 2026-10-06
 
-Current verdict and instruction evidence: [dsp-high-x-audit.md](dsp-high-x-audit.md),
+Current verdict and instruction evidence: [dsp-high-x-audit.md](<dsp-high-x-audit.md>),
 `builds/phase10/replay/`, and reusable `tools/ct_high_x_audit.py`.
 X:[5F00,6000) remains **UNRESOLVED / POTENTIALLY AVAILABLE** after init.
 No 256-,128-, or64-word subrange is **VERIFIED AVAILABLE AFTER INIT**;
@@ -108,7 +110,7 @@ Earlier next-step paragraphs and DMA-space interpretations are superseded.
 
 ## Phase 9 update — 2026-10-06
 
-See [bank-selector-domain.md](bank-selector-domain.md) and builds/phase9/verified/.
+See [bank-selector-domain.md](<bank-selector-domain.md>) and builds/phase9/verified/.
 **VERIFIED recovered normal parameter boundary:**bank0/1, independently of wider
 event inputs. Shared one-token guard and dispatcher reset close HOST-BANK for
 these parameter paths. Five separate tables yield456 distinctX destinations
