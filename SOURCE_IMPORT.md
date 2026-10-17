@@ -1,14 +1,14 @@
 # Source snapshot
 
-This repository now contains the reviewed project-authored source snapshot supplied on 2026-10-09.
+This repository contains the reviewed project-authored source snapshot originally imported on 2026-10-09 and subsequently updated with current documentation.
 
-Included:
+Included source areas:
 
 - `tools/` — reverse-engineering and validation utilities
 - `emulator/` — harnesses, stock replay work, and tests
-- `plaits/poc/` — VariableSaw / Plaits-derived proof-of-concept work
-- `plaits/seam/` — stock seam adapters and validation
-- `notes/` — research log and phase notes
+- `plaits/` — Plaits-derived proof-of-concept and integration work
+- `notes/` — research log and historical/superseded branches
+- `docs/` — current project state and safety/roadmap documentation
 
 Upstream dependency source trees are intentionally **not vendored**. Only provenance/manifests are kept under the corresponding `upstream/` directories.
 
@@ -18,4 +18,14 @@ Original local working tree used during research:
 
 `C:\Proj SSD\CODEX\CIRCUIT`
 
-This file records source-import status only; it is not a claim that every historical research branch is still active. Current project direction is documented in `docs/STATUS.md`, `docs/ROADMAP.md`, and `docs/SAFETY.md`.
+This file records source-import status only.
+
+The current project direction is no longer the original single-voice VariableSaw first PoC. The active target is a four-track Plaits architecture, while the immediate project step is a controlled diagnostic hardware test after a separately reviewed operational release.
+
+Current authoritative repository status is documented in:
+
+- `README.md`
+- `docs/STATUS.md`
+- `docs/ROADMAP.md`
+- `docs/SAFETY.md`
+- `docs/ARCHITECTURE.md`
